@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--the shared elements-->
+    <attr name="track_width" format="dimension"/>
+    <attr name="start_progress" format="integer"/>
+    <attr name="end_progress" format="integer"/>
+    <attr name="start_color" format="color"/>
+    <attr name="end_color" format="color"/>
+    <attr name="isTracked" format="boolean"/>
+    <attr name="trackColor" format="color"/>
+    <attr name="progressTextColor" format="color"/>
+    <attr name="progressDuration" format="integer"/>
+    <attr name="progressTextVisibility" format="boolean"/>
+    <attr name="progressTextSize" format="dimension"/>
+    <attr name="animateType">
+        <enum name="AccelerateDecelerateInterpolator" value="0"/>
+        <enum name="LinearInterpolator" value="1"/>
+        <enum name="AccelerateInterpolator" value="2"/>
+        <enum name="DecelerateInterpolator" value="3"/>
+        <enum name="OvershootInterpolator" value="4"/>
+    </attr>
+    <!--CircleStyle-->
+    <declare-styleable name="CircleProgressView">
+
+        <attr name="track_width"/>
+        <attr name="start_progress"/>
+        <attr name="end_progress"/>
+        <attr name="start_color"/>
+        <attr name="end_color"/>
+        <attr name="isTracked"/>
+        <attr name="trackColor"/>
+        <attr name="progressDuration"/>
+        <attr name="progressTextVisibility"/>
+        <attr name="progressTextColor"/>
+        <attr name="progressTextSize"/>
+        <attr name="animateType"/>
+        <attr name="isFilled" format="boolean"/>
+        <attr name="circleBroken" format="boolean"/>
+
+    </declare-styleable>
+
+    <!--HorizontalStyle-->
+    <declare-styleable name="HorizontalProgressView">
+        <attr name="track_width"/>
+        <attr name="start_progress"/>
+        <attr name="end_progress"/>
+        <attr name="start_color"/>
+        <attr name="end_color"/>
+        <attr name="isTracked"/>
+        <attr name="trackColor"/>
+        <attr name="progressDuration"/>
+        <attr name="progressTextVisibility"/>
+        <attr name="progressTextColor"/>
+        <attr name="progressTextSize"/>
+        <attr name="animateType"/>
+        <attr name="corner_radius" format="dimension"/>
+        <attr name="text_padding_bottom" format="dimension"/>
+
+    </declare-styleable>
+
+    <dimen name="default_trace_width">16dp</dimen>
+    <dimen name="default_progress_text_size">28sp</dimen>
+    <dimen name="default_corner_radius">5dp</dimen>
+    <dimen name="default_horizontal_text_size">14sp</dimen>
+
+
+</resources>

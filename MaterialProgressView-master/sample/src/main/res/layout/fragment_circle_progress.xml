@@ -1,0 +1,217 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.moos.progress.fragment.CircleProgressFragment">
+
+    <com.moos.library.CircleProgressView
+        android:id="@+id/progressView_circle"
+        android:layout_width="240dp"
+        android:layout_height="240dp"
+        android:layout_marginTop="12dp"
+        app:trackColor="#f3f3ee"
+        app:start_progress="0"
+        app:end_progress="60"
+        app:animateType="AccelerateDecelerateInterpolator"
+        app:start_color="@color/purple_end"
+        app:end_color="@color/purple_start"
+        app:progressTextSize="36sp"
+        app:progressTextColor="@color/blue_start"
+        app:circleBroken="true"
+        app:isTracked="true"
+        app:isFilled="false"
+        app:track_width="26dp" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="#666666"
+                    android:textSize="16sp"
+                    android:layout_marginLeft="12dp"
+                    android:text="track width："/>
+                <android.support.v7.widget.AppCompatSeekBar
+                    android:id="@+id/csb_track_width"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="8dp"
+                    android:max="100"
+                    android:progress="20"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="#666666"
+                    android:textSize="16sp"
+                    android:layout_marginLeft="12dp"
+                    android:text="start progress："/>
+                <android.support.v7.widget.AppCompatSeekBar
+                    android:id="@+id/csb_start_progress"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="8dp"
+                    android:max="100"
+                    android:progress="0"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="#666666"
+                    android:textSize="16sp"
+                    android:layout_marginLeft="12dp"
+                    android:text="end progress："/>
+                <android.support.v7.widget.AppCompatSeekBar
+                    android:id="@+id/csb_end_progress"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="8dp"
+                    android:max="100"
+                    android:progress="60"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="#666666"
+                    android:textSize="16sp"
+                    android:layout_marginLeft="12dp"
+                    android:text="text size："/>
+                <android.support.v7.widget.AppCompatSeekBar
+                    android:id="@+id/csb_text_size"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="8dp"
+                    android:max="100"
+                    android:progress="20"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="#666666"
+                    android:textSize="16sp"
+                    android:layout_marginLeft="12dp"
+                    android:text="trackEnabled："/>
+                <android.support.v7.widget.SwitchCompat
+                    android:id="@+id/csc_isTracked"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:layout_margin="8dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="#666666"
+                    android:textSize="16sp"
+                    android:layout_marginLeft="12dp"
+                    android:text="fillEnabled："/>
+                <android.support.v7.widget.SwitchCompat
+                    android:id="@+id/csc_isFilled"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="#666666"
+                    android:textSize="16sp"
+                    android:layout_marginLeft="12dp"
+                    android:text="circleBroken："/>
+                <android.support.v7.widget.SwitchCompat
+                    android:id="@+id/csc_circleBroken"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:layout_margin="8dp"/>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/cb_start"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/blue_start"
+                android:textColor="#ffffff"
+                android:textAllCaps="false"
+                android:layout_gravity="bottom"
+                android:layout_margin="14dp"
+                android:padding="15dp"
+                android:text="@string/start_animation_Str"/>
+
+            <Button
+                android:id="@+id/cb_progress_call_back"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/blue_start"
+                android:textColor="@color/red_start"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="14dp"
+                android:layout_marginRight="14dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="36dp"
+                android:textAllCaps="false"
+                android:padding="15dp"
+
+                android:text="@string/call_back_str"/>
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
+</LinearLayout>
