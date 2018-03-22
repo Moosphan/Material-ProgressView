@@ -167,16 +167,19 @@ please wait to update...
 
 [HenCoder](http://hencoder.com/)
 
+[VisualCC](https://www.uplabs.com/posts/learning-progress-interface)
+
 ## About me
 
-<http://moos.club/>
+Welcome to improve it with me and give me some issues.
+
+My Blog:<http://moos.club/>
 
 Buy  me a coffee:
 
 
 
 ![coffee](https://github.com/Moosphan/Material-ProgressView/blob/master/MaterialProgressView-master/image/a_coffee.png)
-
 
 
 ## License
