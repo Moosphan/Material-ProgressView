@@ -1,6 +1,7 @@
 package com.moos.progress.fragment;
 
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.AppCompatSeekBar;
@@ -63,6 +64,7 @@ public class HorizontalProgressFragment extends Fragment implements SeekBar.OnSe
         btn_start.setOnClickListener(this);
         horizontalProgressView.setProgressViewUpdateListener(this);
 
+        
         return view;
     }
 

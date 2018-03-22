@@ -55,6 +55,21 @@ A beautiful and simple used progress view for Android.It provides two different 
           app:circleBroken="true"
           app:isTracked="true"
           app:track_width="26dp"/>
+
+  <com.moos.library.HorizontalProgressView
+        android:id="@+id/progressView_horizontal"
+        android:layout_width="320dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="40dp"
+        android:layout_marginTop="36dp"
+        app:start_color="@color/red_start"
+        app:end_color="@color/red_end"
+        app:track_width="12dp"
+        app:end_progress="60"
+        app:progressTextColor="#696969"
+        app:corner_radius="12dp"
+        app:isTracked="true"
+        app:trackColor="#f4f4f4"/>
   ```
 
   ​
@@ -62,6 +77,8 @@ A beautiful and simple used progress view for Android.It provides two different 
 - In java:
 
   ```
+
+          //CircleProgressView
           CircleProgressView circleProgressView = (CircleProgressView) view.findViewById(R.id.progressView_circle);
           circleProgressView.setStartProgress(0);
           circleProgressView.setEndProgress(80);
@@ -73,6 +90,20 @@ A beautiful and simple used progress view for Android.It provides two different 
           circleProgressView.setTrackEnabled(true);
           circleProgressView.setFillEnabled(false);
           circleProgressView.startProgressAnimation();
+         
+          //HorizontalProgressView
+          HorizontalProgressView circleProgressView = (HorizontalProgressView) view.findViewById(R.id.progressView_horizontal);
+          horizontalProgressView.setStartProgress(0);
+          horizontalProgressView.setEndProgress(80);
+          horizontalProgressView.setStartColor(Color.parseColor("#FF8F5D"));
+          horizontalProgressView.setEndColor(Color.parseColor("#F54EA2"));
+          horizontalProgressView.setTrackWidth(30);
+          horizontalProgressView.setProgressDuration(2000);
+          horizontalProgressView.setTrackEnabled(true);
+          horizontalProgressView.setProgressCornerRadius(20);
+          horizontalProgressView.setProgressTextPaddingBottom(12);
+          horizontalProgressView.startProgressAnimation();
+
   ```
 
 
@@ -161,7 +192,7 @@ A beautiful and simple used progress view for Android.It provides two different 
 
 ## Sample
 
-please wait to update...
+[ProgressView-sample.apk](https://github.com/Moosphan/Material-ProgressView/blob/master/MaterialProgressView-master/sample/build/outputs/apk/debug)
 
 ## Thanks to
 
