@@ -1,6 +1,6 @@
 # Material-ProgressView
 
-[ ![Download](https://api.bintray.com/packages/moosphon/maven/MaterialProgressView/images/download.svg) ](https://bintray.com/moosphon/maven/MaterialProgressView/_latestVersion)
+[ ![Download](https://api.bintray.com/packages/moosphon/maven/Material-ProgressView/images/download.svg) ](https://bintray.com/moosphon/maven/Material-ProgressView/_latestVersion)
 
 A beautiful and simple used progress view for Android.It provides two different styles to display the progress. You can use it like this：
 
@@ -159,6 +159,9 @@ A beautiful and simple used progress view for Android.It provides two different 
   ```
 
 
+## Sample
+
+please wait to update...
 
 ## Thanks to
 
@@ -172,7 +175,7 @@ Buy  me a coffee:
 
 
 
-![coffee](https://github.com/Moosphan/Material-ProgressView/image/a_coffee.jpg)
+![coffee](https://github.com/Moosphan/Material-ProgressView/blob/master/MaterialProgressView-master/image/a_coffee.jpg)
 
 
 
