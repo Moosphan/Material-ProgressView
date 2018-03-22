@@ -1,6 +1,7 @@
 package com.moos.progress.fragment;
 
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.AppCompatSeekBar;
@@ -11,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.SeekBar;
+import android.widget.TextView;
 
 import com.moos.library.CircleProgressView;
 import com.moos.progress.R;
@@ -23,7 +25,8 @@ public class CircleProgressFragment extends Fragment implements SeekBar.OnSeekBa
     private AppCompatSeekBar csb_track_width, csb_start_progress, csb_end_progress, csb_text_size;
     private SwitchCompat csc_trackEnabled, csc_fillEnabled, csc_circleBroken;
     private CircleProgressView circleProgressView;
-    private Button btn_start, btn_call_back;
+    private Button btn_start;
+    private TextView textView_call_back;
 
     public CircleProgressFragment() {
         // Required empty public constructor
@@ -35,6 +38,11 @@ public class CircleProgressFragment extends Fragment implements SeekBar.OnSeekBa
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_circle_progress, container, false);
+        initView(view);
+        return view;
+    }
+
+    private void initView(View view){
         csb_track_width = (AppCompatSeekBar) view.findViewById(R.id.csb_track_width);
         csb_start_progress = (AppCompatSeekBar) view.findViewById(R.id.csb_start_progress);
         csb_end_progress = (AppCompatSeekBar) view.findViewById(R.id.csb_end_progress);
@@ -44,7 +52,7 @@ public class CircleProgressFragment extends Fragment implements SeekBar.OnSeekBa
         csc_circleBroken = (SwitchCompat) view.findViewById(R.id.csc_circleBroken);
         circleProgressView = (CircleProgressView) view.findViewById(R.id.progressView_circle);
         btn_start = (Button) view.findViewById(R.id.cb_start);
-        btn_call_back = (Button) view.findViewById(R.id.cb_progress_call_back);
+        textView_call_back = (TextView) view.findViewById(R.id.cb_progress_call_back);
         csb_track_width.setOnSeekBarChangeListener(this);
         csb_start_progress.setOnSeekBarChangeListener(this);
         csb_end_progress.setOnSeekBarChangeListener(this);
@@ -53,8 +61,7 @@ public class CircleProgressFragment extends Fragment implements SeekBar.OnSeekBa
         csc_circleBroken.setOnCheckedChangeListener(this);
         csc_fillEnabled.setOnCheckedChangeListener(this);
         btn_start.setOnClickListener(this);
-        btn_call_back.setOnClickListener(this);
-        return view;
+        circleProgressView.setProgressViewUpdateListener(this);
     }
 
     @Override
@@ -88,6 +95,7 @@ public class CircleProgressFragment extends Fragment implements SeekBar.OnSeekBa
     public void onStopTrackingTouch(SeekBar seekBar) {
 
     }
+    
 
     @Override
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -123,14 +131,11 @@ public class CircleProgressFragment extends Fragment implements SeekBar.OnSeekBa
     public void onClick(View v) {
         if(v.getId() == R.id.cb_start){
             circleProgressView.startProgressAnimation();
-        }else if(v.getId() == R.id.cb_progress_call_back){
-            circleProgressView.setProgressViewUpdateListener(this);
-            circleProgressView.startProgressAnimation();
         }
     }
 
     @Override
     public void onProgressUpdate(float progress) {
-        btn_call_back.setText("progress: "+ (int) (progress)+"%");
+        textView_call_back.setText("progress: "+ (int) (progress)+"%");
     }
 }

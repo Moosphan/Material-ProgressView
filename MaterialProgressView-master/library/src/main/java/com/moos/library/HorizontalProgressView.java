@@ -24,9 +24,7 @@ import android.view.animation.OvershootInterpolator;
 
 /**
  * Created by moos on 2018/3/19.
- * <p/>
  * Material progress view in 'Horizontal' style
- * <p/>
  */
 
 public class HorizontalProgressView extends View {
@@ -190,9 +188,8 @@ public class HorizontalProgressView extends View {
 
 
         /**
-         * <p/>
+         *
          * 50 is the line progress left/right point offset,you can change it by your self.
-         * <p/>
          */
         //canvas.drawLine(getPaddingLeft()+50, getHeight()/2 + getPaddingTop() + mTrackWidth, (getWidth() - getPaddingRight()-50)*(moveProgress/100), getHeight()/2 + getPaddingTop() + mTrackWidth, progressPaint );
 
@@ -312,7 +309,7 @@ public class HorizontalProgressView extends View {
      * set move progress
      * @param progress progress of moving
      */
-    public void setProgress(float progress){
+    private void setProgress(float progress){
         this.moveProgress = progress;
         refreshTheView();
     }
@@ -375,6 +372,15 @@ public class HorizontalProgressView extends View {
      */
     public void setTrackWidth(int width){
         this.mTrackWidth = Utils.dp2px(mContext, width);
+        refreshTheView();
+    }
+
+    /**
+     * set track color for progress background
+     * @param color bg color
+     */
+    public void setTrackColor(@ColorInt int color){
+        this.mTrackColor = color;
         refreshTheView();
     }
 

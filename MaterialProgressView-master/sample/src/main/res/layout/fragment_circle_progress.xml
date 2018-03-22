@@ -12,10 +12,8 @@
         android:layout_width="240dp"
         android:layout_height="240dp"
         android:layout_marginTop="12dp"
-        app:trackColor="#f3f3ee"
         app:start_progress="0"
         app:end_progress="60"
-        app:animateType="AccelerateDecelerateInterpolator"
         app:start_color="@color/purple_end"
         app:end_color="@color/purple_start"
         app:progressTextSize="36sp"
@@ -23,7 +21,9 @@
         app:circleBroken="true"
         app:isTracked="true"
         app:isFilled="false"
-        app:track_width="26dp" />
+        app:trackColor="#f3f3ee"
+        app:track_width="26dp"
+        app:animateType="AccelerateDecelerateInterpolator"/>
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -191,20 +191,19 @@
                 android:padding="15dp"
                 android:text="@string/start_animation_Str"/>
 
-            <Button
+            <TextView
                 android:id="@+id/cb_progress_call_back"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/blue_start"
                 android:textColor="@color/red_start"
                 android:layout_gravity="bottom"
+                android:gravity="center"
                 android:layout_marginLeft="14dp"
                 android:layout_marginRight="14dp"
                 android:layout_marginTop="12dp"
                 android:layout_marginBottom="36dp"
                 android:textAllCaps="false"
                 android:padding="15dp"
-
                 android:text="@string/call_back_str"/>
 
 
