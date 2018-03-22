@@ -26,7 +26,6 @@ public class CircleProgressFragment extends Fragment implements SeekBar.OnSeekBa
     private SwitchCompat csc_trackEnabled, csc_fillEnabled, csc_circleBroken;
     private CircleProgressView circleProgressView;
     private Button btn_start;
-    private TextView textView_call_back;
 
     public CircleProgressFragment() {
         // Required empty public constructor
@@ -52,7 +51,6 @@ public class CircleProgressFragment extends Fragment implements SeekBar.OnSeekBa
         csc_circleBroken = (SwitchCompat) view.findViewById(R.id.csc_circleBroken);
         circleProgressView = (CircleProgressView) view.findViewById(R.id.progressView_circle);
         btn_start = (Button) view.findViewById(R.id.cb_start);
-        textView_call_back = (TextView) view.findViewById(R.id.cb_progress_call_back);
         csb_track_width.setOnSeekBarChangeListener(this);
         csb_start_progress.setOnSeekBarChangeListener(this);
         csb_end_progress.setOnSeekBarChangeListener(this);
@@ -95,7 +93,7 @@ public class CircleProgressFragment extends Fragment implements SeekBar.OnSeekBa
     public void onStopTrackingTouch(SeekBar seekBar) {
 
     }
-    
+
 
     @Override
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -136,6 +134,6 @@ public class CircleProgressFragment extends Fragment implements SeekBar.OnSeekBa
 
     @Override
     public void onProgressUpdate(float progress) {
-        textView_call_back.setText("progress: "+ (int) (progress)+"%");
+
     }
 }

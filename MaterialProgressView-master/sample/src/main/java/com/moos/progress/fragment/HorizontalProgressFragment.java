@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.SeekBar;
+import android.widget.TextView;
 
 import com.moos.library.CircleProgressView;
 import com.moos.library.HorizontalProgressView;
@@ -22,13 +23,14 @@ import static android.content.ContentValues.TAG;
 /**
  * A sample of HorizontalProgressView.
  */
-public class HorizontalProgressFragment extends Fragment implements SeekBar.OnSeekBarChangeListener, CompoundButton.OnCheckedChangeListener, View.OnClickListener {
+public class HorizontalProgressFragment extends Fragment implements SeekBar.OnSeekBarChangeListener, CompoundButton.OnCheckedChangeListener, View.OnClickListener, HorizontalProgressView.HorizontalProgressUpdateListener {
 
 
     private AppCompatSeekBar hsb_track_width, hsb_start_progress, hsb_end_progress, hsb_text_size, hsb_corner_radius ;
     private SwitchCompat hsc_trackEnabled, hsc_text_visibility;
     private HorizontalProgressView horizontalProgressView;
     private Button btn_start;
+    private TextView textView_call_back;
 
     public HorizontalProgressFragment() {
         // Required empty public constructor
@@ -49,6 +51,7 @@ public class HorizontalProgressFragment extends Fragment implements SeekBar.OnSe
         hsc_text_visibility = (SwitchCompat) view.findViewById(R.id.hsc_text_visibility);
         horizontalProgressView = (HorizontalProgressView) view.findViewById(R.id.progressView_horizontal);
         btn_start = (Button) view.findViewById(R.id.hb_start);
+        textView_call_back = (TextView) view.findViewById(R.id.cb_progress_call_back);
 
         hsb_track_width.setOnSeekBarChangeListener(this);
         hsb_start_progress.setOnSeekBarChangeListener(this);
@@ -58,6 +61,7 @@ public class HorizontalProgressFragment extends Fragment implements SeekBar.OnSe
         hsc_trackEnabled.setOnCheckedChangeListener(this);
         hsc_text_visibility.setOnCheckedChangeListener(this);
         btn_start.setOnClickListener(this);
+        horizontalProgressView.setProgressViewUpdateListener(this);
 
         return view;
     }
@@ -125,5 +129,10 @@ public class HorizontalProgressFragment extends Fragment implements SeekBar.OnSe
         if(v.getId() == R.id.hb_start){
             horizontalProgressView.startProgressAnimation();
         }
+    }
+
+    @Override
+    public void onProgressUpdate(float progress) {
+        textView_call_back.setText("progress: "+ (int) (progress)+"%");
     }
 }

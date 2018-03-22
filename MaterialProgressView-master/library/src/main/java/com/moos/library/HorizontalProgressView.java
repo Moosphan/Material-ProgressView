@@ -500,7 +500,7 @@ public class HorizontalProgressView extends View {
     /**
      * the interface to help get the value of progress moving
      */
-    protected interface HorizontalProgressUpdateListener{
+    public interface HorizontalProgressUpdateListener{
         void onProgressUpdate(float progress);
     }
 

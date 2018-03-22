@@ -177,6 +177,20 @@
                     android:layout_margin="8dp"/>
             </LinearLayout>
 
+            <TextView
+                android:id="@+id/cb_progress_call_back"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/red_start"
+                android:layout_gravity="bottom"
+                android:gravity="center"
+                android:layout_marginLeft="14dp"
+                android:layout_marginRight="14dp"
+                android:layout_marginTop="12dp"
+                android:textAllCaps="false"
+                android:padding="8dp"
+                android:text=""/>
+
             <Button
                 android:id="@+id/hb_start"
                 android:layout_width="match_parent"
@@ -187,6 +201,7 @@
                 android:layout_margin="14dp"
                 android:padding="15dp"
                 android:textAllCaps="false"
+                android:layout_marginBottom="36dp"
                 android:text="@string/start_animation_Str"/>
 
 

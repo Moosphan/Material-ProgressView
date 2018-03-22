@@ -4,7 +4,7 @@
 
 A beautiful and simple used progress view for Android.It provides two different styles to display the progress. You can use it like this：
 
-
+![example](https://github.com/Moosphan/Material-ProgressView/blob/master/MaterialProgressView-master/image/progressview.gif)
 
 ## Quick start
 
@@ -175,7 +175,7 @@ Buy  me a coffee:
 
 
 
-![coffee](https://github.com/Moosphan/Material-ProgressView/blob/master/MaterialProgressView-master/image/a_coffee.jpg)
+![coffee](https://github.com/Moosphan/Material-ProgressView/blob/master/MaterialProgressView-master/image/a_coffee.png)
 
 
 
