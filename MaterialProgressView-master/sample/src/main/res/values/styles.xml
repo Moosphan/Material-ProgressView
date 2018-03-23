@@ -7,5 +7,9 @@
         <item name="colorPrimaryDark">#657af0</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+    <style name="ClickableImageView">
+        <item name="android:clickable">true</item>
+        <item name="android:background">?android:selectableItemBackground</item>
+    </style>
 
 </resources>

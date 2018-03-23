@@ -2,7 +2,11 @@
 
 [ ![Download](https://api.bintray.com/packages/moosphon/maven/Material-ProgressView/images/download.svg) ](https://bintray.com/moosphon/maven/Material-ProgressView/_latestVersion)
 
-A beautiful and simple used progress view for Android.It provides two different styles to display the progress. You can use it like this：
+A beautiful and simple used progress view for Android.It provides two different styles to display the progress. You can achieve a gradual change by setting the start color and the end color. You can use it like this：
+
+![example](https://github.com/Moosphan/Material-ProgressView/blob/master/MaterialProgressView-master/image/beauty.gif)
+
+More details on CircleProgressView and HorizontalProgressView:
 
 ![example](https://github.com/Moosphan/Material-ProgressView/blob/master/MaterialProgressView-master/image/progressview.gif)
 
@@ -24,7 +28,7 @@ A beautiful and simple used progress view for Android.It provides two different 
   2. Moudle—>build.gradle:
 
      ```
-     compile 'com.moos:Material-ProgressView:1.0.0'
+     compile 'com.moos:Material-ProgressView:1.0.1'
      ```
 
      ​
@@ -35,7 +39,7 @@ A beautiful and simple used progress view for Android.It provides two different 
   <dependency>
     <groupId>com.moos</groupId>
     <artifactId>Material-ProgressView</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <type>pom</type>
   </dependency>
   ```
@@ -151,11 +155,48 @@ A beautiful and simple used progress view for Android.It provides two different 
   /**
        * you can use this callback to customize your own progress text UI, like pursuit movement.
        */
-  circleProgressView.setProgressViewUpdateListener(new CircleProgressView.CircleProgressUpdateListener() {
+
+      circleProgressView.setProgressViewUpdateListener(new CircleProgressView.CircleProgressUpdateListener() {
+      
       @Override
-      public void onProgressUpdate(float progress) {
+      public void onCircleProgressStart(View view) {
+
+      }
+
+      @Override
+      public void onCircleProgressUpdate(View view,float progress) {
+          /**
+         * you can detail with progressViews' animate event and customize their animate order
+         */
           int progressInt = (int) progress;
           textView.setText(String.valueOf(progress)+"%");
+      }
+
+      @Override
+      public void onCircleProgressFinished(View view) {
+
+      }
+  });
+
+  horizontalProgressView.setProgressViewUpdateListener(new HorizontalProgressView.HorizontalProgressUpdateListener() {
+      
+      @Override
+      public void onHorizontalProgressStart(View view) {
+
+      }
+
+      @Override
+      public void onHorizontalProgressUpdate(View view,float progress) {
+        /**
+         * you can detail with progressViews' animate event and customize their animate order
+         */
+          int progressInt = (int) progress;
+          textView.setText(String.valueOf(progress)+"%");
+      }
+
+      @Override
+      public void onHorizontalProgressFinished(View view) {
+
       }
   });
   ```
@@ -193,6 +234,10 @@ A beautiful and simple used progress view for Android.It provides two different 
 ## Sample
 
 [ProgressView-sample.apk](https://github.com/Moosphan/Material-ProgressView/blob/master/MaterialProgressView-master/sample/build/outputs/apk/debug)
+
+## Update log
+
+- v1.0.1:update the interface of `HorizontalProgressUpdateListener` and `CircleProgressUpdateListener`, add two methods to get back the animation state.
 
 ## Thanks to
 

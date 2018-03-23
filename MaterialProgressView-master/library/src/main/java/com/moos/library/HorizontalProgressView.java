@@ -1,5 +1,6 @@
 package com.moos.library;
 
+import android.animation.Animator;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.content.Context;
@@ -440,8 +441,34 @@ public class HorizontalProgressView extends View {
             public void onAnimationUpdate(ValueAnimator animation) {
                 float progress = (float) animation.getAnimatedValue("progress");
                 if(animatorUpdateListener != null){
-                    animatorUpdateListener.onProgressUpdate(progress);
+                    animatorUpdateListener.onHorizontalProgressUpdate(HorizontalProgressView.this,progress);
                 }
+
+            }
+
+        });
+        progressAnimator.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animator) {
+                if(animatorUpdateListener != null){
+                    animatorUpdateListener.onHorizontalProgressStart(HorizontalProgressView.this);
+                }
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animator) {
+                if(animatorUpdateListener != null){
+                    animatorUpdateListener.onHorizontalProgressFinished(HorizontalProgressView.this);
+                }
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animator) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animator) {
 
             }
         });
@@ -501,7 +528,10 @@ public class HorizontalProgressView extends View {
      * the interface to help get the value of progress moving
      */
     public interface HorizontalProgressUpdateListener{
-        void onProgressUpdate(float progress);
+        void onHorizontalProgressStart(View view);
+        void onHorizontalProgressUpdate(View view, float progress);
+        void onHorizontalProgressFinished(View view);
+
     }
 
     /**

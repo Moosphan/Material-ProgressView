@@ -133,7 +133,20 @@ public class CircleProgressFragment extends Fragment implements SeekBar.OnSeekBa
     }
 
     @Override
-    public void onProgressUpdate(float progress) {
+    public void onCircleProgressStart(View view) {
+
+        /**
+         * you can detail with progressViews' animate event and customize their animate order
+         */
+    }
+
+    @Override
+    public void onCircleProgressUpdate(View view, float progress) {
+
+    }
+
+    @Override
+    public void onCircleProgressFinished(View view) {
 
     }
 }

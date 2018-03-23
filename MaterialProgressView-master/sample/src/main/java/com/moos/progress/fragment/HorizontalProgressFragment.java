@@ -134,7 +134,17 @@ public class HorizontalProgressFragment extends Fragment implements SeekBar.OnSe
     }
 
     @Override
-    public void onProgressUpdate(float progress) {
+    public void onHorizontalProgressStart(View view) {
+
+    }
+
+    @Override
+    public void onHorizontalProgressUpdate(View view,float progress) {
         textView_call_back.setText("progress: "+ (int) (progress)+"%");
+    }
+
+    @Override
+    public void onHorizontalProgressFinished(View view) {
+
     }
 }

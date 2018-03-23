@@ -177,12 +177,36 @@
                     android:layout_margin="8dp"/>
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+                <TextView
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_margin="12dp"
+                    android:padding="10dp"
+                    android:textColor="#ffffffff"
+                    android:text="startColor"/>
+
+                <TextView
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:textColor="#ffffffff"
+                    android:layout_margin="12dp"
+                    android:text="endColor"/>
+
+            </LinearLayout>
+
             <TextView
                 android:id="@+id/cb_progress_call_back"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/red_start"
-                android:layout_gravity="bottom"
                 android:gravity="center"
                 android:layout_marginLeft="14dp"
                 android:layout_marginRight="14dp"

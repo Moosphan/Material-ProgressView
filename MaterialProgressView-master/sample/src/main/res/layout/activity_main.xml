@@ -12,26 +12,258 @@
         android:background="@color/blue_start"
         android:elevation="1dp">
         <TextView
-            android:id="@+id/fragment_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/fragment_name_circle_progress"
+            android:text="@string/app_name"
             android:textColor="#ffffffff"
             android:textStyle="italic"
             android:textSize="18sp"/>
-        <android.support.v7.widget.SwitchCompat
-            android:id="@+id/fragment_switch"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="18dp"
-            android:checked="false"
-            android:layout_gravity="center_vertical|right"/>
+        <ImageView
+            android:id="@+id/btn_details"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_margin="6dp"
+            android:padding="6dp"
+            android:tint="#ffffff"
+            style="@style/ClickableImageView"
+            android:src="@drawable/detail_icon"
+            android:layout_gravity="right"/>
+
     </android.support.v7.widget.Toolbar>
 
-    <FrameLayout
-        android:id="@+id/fragment_container"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="240dp">
+            <com.moos.library.CircleProgressView
+                android:id="@+id/progressView_circle_small"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="12dp"
+                app:start_progress="0"
+                app:end_progress="78"
+                app:start_color="#0052a3"
+                app:end_color="#00EEFA"
+                app:progressTextSize="18sp"
+                app:progressTextColor="#28AAFB"
+                app:circleBroken="false"
+                app:isTracked="true"
+                app:isFilled="false"
+                app:trackColor="#22FFF5"
+                app:track_width="8dp"
+                app:progressDuration="2000"
+                app:animateType="AccelerateDecelerateInterpolator"/>
+            <com.moos.library.CircleProgressView
+                android:id="@+id/progressView_circle_main"
+                android:layout_width="220dp"
+                android:layout_height="220dp"
+                android:layout_gravity="center"
+                app:progressTextVisibility="false"
+                android:layout_marginTop="12dp"
+                app:start_progress="0"
+                app:end_progress="98"
+                app:start_color="@color/red_end"
+                app:end_color="@color/red_start"
+                app:progressTextSize="48sp"
+                app:progressTextColor="@color/colorAccent"
+                app:circleBroken="true"
+                app:isTracked="true"
+                app:isFilled="false"
+                app:trackColor="#F0F0F0"
+                app:track_width="26dp"
+                app:progressDuration="2000"
+                app:animateType="AccelerateDecelerateInterpolator"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center">
+                <TextView
+                    android:id="@+id/progress_text_main"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="64sp"
+                    android:text="0"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="%"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="32sp"/>
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorAccent"
+                android:textSize="28sp"
+                android:layout_gravity="center_horizontal|bottom"
+                android:text="RESULT"/>
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="20dp">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="12sp"
+                    android:text="Language"/>
+                <com.moos.library.HorizontalProgressView
+                    android:id="@+id/hpv_language"
+                    android:layout_width="120dp"
+                    android:layout_height="30dp"
+                    app:progressTextVisibility="false"
+                    app:start_color="@color/purple_light"
+                    app:end_color="@color/purple_start"
+                    app:track_width="8dp"
+                    app:end_progress="92"
+                    app:progressTextColor="#696969"
+                    app:isTracked="true"
+                    app:progressDuration="2600"
+                    app:trackColor="#f4f4f4"/>
+                <TextView
+                    android:id="@+id/progress_text_language"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text=""
+                    android:textSize="12sp"
+                    android:textColor="#AAAAAA" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="48dp"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="12sp"
+                    android:text="History"/>
+                <com.moos.library.HorizontalProgressView
+                    android:id="@+id/hpv_history"
+                    android:layout_width="120dp"
+                    android:layout_height="30dp"
+                    app:progressTextVisibility="false"
+                    app:start_color="@color/light_orange"
+                    app:end_color="@color/dark_orange"
+                    app:track_width="8dp"
+                    app:end_progress="86"
+                    app:progressTextColor="#696969"
+                    app:isTracked="true"
+                    app:progressDuration="2200"
+                    app:trackColor="#f4f4f4"/>
+                <TextView
+                    android:id="@+id/progress_text_history"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text=""
+                    android:textSize="12sp"
+                    android:textColor="#AAAAAA" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="30dp">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="12sp"
+                    android:text="Mathematics"/>
+                <com.moos.library.HorizontalProgressView
+                    android:id="@+id/hpv_math"
+                    android:layout_width="120dp"
+                    android:layout_height="30dp"
+                    app:progressTextVisibility="false"
+                    app:start_color="@color/blue_start"
+                    app:end_color="@color/colorPrimary"
+                    app:track_width="8dp"
+                    app:end_progress="88"
+                    app:progressTextColor="#696969"
+                    app:isTracked="true"
+                    app:progressDuration="1800"
+                    app:trackColor="#f4f4f4"/>
+                <TextView
+                    android:id="@+id/progress_text_math"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text=""
+                    android:textSize="12sp"
+                    android:textColor="#AAAAAA" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="48dp"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="12sp"
+                    android:text="English"/>
+                <com.moos.library.HorizontalProgressView
+                    android:id="@+id/hpv_english"
+                    android:layout_width="120dp"
+                    android:layout_height="30dp"
+                    app:progressTextVisibility="false"
+                    app:start_color="@color/green_start"
+                    app:end_color="@color/green_end"
+                    app:track_width="8dp"
+                    app:end_progress="96"
+                    app:progressTextColor="#696969"
+                    app:isTracked="true"
+                    app:progressDuration="2900"
+                    app:trackColor="#f4f4f4"/>
+                <TextView
+                    android:id="@+id/progress_text_english"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text=""
+                    android:textSize="12sp"
+                    android:textColor="#AAAAAA" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_start"
+        android:layout_width="200dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/colorAccent"
+        android:text="Start Reviewing"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/start_btn_selector"/>
 
 
 
