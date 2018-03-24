@@ -233,11 +233,13 @@ More details on CircleProgressView and HorizontalProgressView:
 
 ## Sample
 
-[ProgressView-sample.apk](https://github.com/Moosphan/Material-ProgressView/blob/master/MaterialProgressView-master/example/sample-debug.apk)
+[ProgressView-sample.apk](https://github.com/Moosphan/Awesome-android-demos/blob/master/UI/views/material-progressview.apk)
 
 ## Update log
 
-- v1.0.1:update the interface of `HorizontalProgressUpdateListener` and `CircleProgressUpdateListener`, add two methods to get back the animation state.
+- V1.0.1:
+
+>update the interface of `HorizontalProgressUpdateListener` and `CircleProgressUpdateListener`, add two methods to get back the animation state.
 
 ## Thanks to
 
