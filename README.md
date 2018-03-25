@@ -239,7 +239,7 @@ More details on CircleProgressView and HorizontalProgressView:
 
 - V1.0.1:
 
->update the interface of `HorizontalProgressUpdateListener` and `CircleProgressUpdateListener`, add two methods to get back the animation state.
+Update the interface of `HorizontalProgressUpdateListener` and `CircleProgressUpdateListener`, add two methods to get back the animation state.
 
 ## Thanks to
 

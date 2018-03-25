@@ -3,8 +3,8 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="light_orange">#FFC288</color>
-    <color name="dark_orange">#FF8F5D</color>
+    <color name="light_orange">#FFC2aa</color>
+    <color name="dark_orange">#ee8a3a</color>
     <color name="default_track_color">#f3e5dd</color>
     <color name="red_start">#EE3455</color>
     <color name="red_end">#FFaa89</color>

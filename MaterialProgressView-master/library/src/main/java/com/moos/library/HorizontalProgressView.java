@@ -190,7 +190,9 @@ public class HorizontalProgressView extends View {
 
         /**
          *
-         * 50 is the line progress left/right point offset,you can change it by your self.
+         * TODO:next time update i should do
+         * 1.adjust the draw location when has no text,
+         * 2.add a progress label when progress moving.
          */
         //canvas.drawLine(getPaddingLeft()+50, getHeight()/2 + getPaddingTop() + mTrackWidth, (getWidth() - getPaddingRight()-50)*(moveProgress/100), getHeight()/2 + getPaddingTop() + mTrackWidth, progressPaint );
 
@@ -206,7 +208,7 @@ public class HorizontalProgressView extends View {
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
 
-        mShader = new LinearGradient(getPaddingLeft()-200, (getHeight()-getPaddingTop())-100, getWidth() - getPaddingRight(), getHeight()/2 + getPaddingTop() + mTrackWidth,
+        mShader = new LinearGradient(getPaddingLeft()-50, (getHeight()-getPaddingTop())-50, getWidth() - getPaddingRight(), getHeight()/2 + getPaddingTop() + mTrackWidth,
                 mStartColor, mEndColor, Shader.TileMode.CLAMP);
     }
 
@@ -351,7 +353,7 @@ public class HorizontalProgressView extends View {
      */
     public void setStartColor(@ColorInt int startColor){
         this.mStartColor = startColor;
-        mShader = new LinearGradient(getPaddingLeft()-200, (getHeight()-getPaddingTop())-100, getWidth() - getPaddingRight(), getHeight()/2 + getPaddingTop() + mTrackWidth,
+        mShader = new LinearGradient(getPaddingLeft()-50, (getHeight()-getPaddingTop())-50, getWidth() - getPaddingRight(), getHeight()/2 + getPaddingTop() + mTrackWidth,
                 mStartColor, mEndColor, Shader.TileMode.CLAMP);
         refreshTheView();
     }
@@ -362,7 +364,7 @@ public class HorizontalProgressView extends View {
      */
     public void setEndColor(@ColorInt int endColor){
         this.mEndColor = endColor;
-        mShader = new LinearGradient(getPaddingLeft()-200, (getHeight()-getPaddingTop())-100, getWidth() - getPaddingRight(), getHeight()/2 + getPaddingTop() + mTrackWidth,
+        mShader = new LinearGradient(getPaddingLeft()-50, (getHeight()-getPaddingTop())-50, getWidth() - getPaddingRight(), getHeight()/2 + getPaddingTop() + mTrackWidth,
                 mStartColor, mEndColor, Shader.TileMode.CLAMP);
         refreshTheView();
     }
