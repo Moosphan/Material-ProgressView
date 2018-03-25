@@ -233,7 +233,7 @@ More details on CircleProgressView and HorizontalProgressView:
 
 ## Sample
 
-[ProgressView-sample.apk](https://github.com/Moosphan/Awesome-android-demos/blob/master/UI/views/material-progressview.apk)
+[ProgressView-sample.apk](https://www.pgyer.com/u11w)
 
 ## Update log
 
