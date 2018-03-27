@@ -1,9 +1,6 @@
 # Material-ProgressView
 
-[ ![Download](https://api.bintray.com/packages/moosphon/maven/Material-ProgressView/images/download.svg) ](https://bintray.com/moosphon/maven/Material-ProgressView/_latestVersion)[![GitHub issues](https://img.shields.io/github/issues/Moosphan/Material-ProgressView.svg)](https://github.com/Moosphan/Material-ProgressView/issues)[![GitHub stars](https://img.shields.io/github/stars/Moosphan/Material-ProgressView.svg)](https://github.com/Moosphan/Material-ProgressView/stargazers)[![GitHub forks](https://img.shields.io/github/forks/Moosphan/Material-ProgressView.svg)](https://github.com/Moosphan/Material-ProgressView/network)[![GitHub license](https://img.shields.io/github/license/Moosphan/Material-ProgressView.svg)](https://github.com/Moosphan/Material-ProgressView/blob/master/LICENSE)[![Twitter](https://img.shields.io/twitter/url/https/github.com/Moosphan/Material-ProgressView.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2FMoosphan%2FMaterial-ProgressView)
-
-
-
+[ ![Download](https://api.bintray.com/packages/moosphon/maven/Material-ProgressView/images/download.svg) ](https://bintray.com/moosphon/maven/Material-ProgressView/_latestVersion) [![GitHub issues](https://img.shields.io/github/issues/Moosphan/Material-ProgressView.svg)](https://github.com/Moosphan/Material-ProgressView/issues) [![GitHub stars](https://img.shields.io/github/stars/Moosphan/Material-ProgressView.svg)](https://github.com/Moosphan/Material-ProgressView/stargazers) [![GitHub forks](https://img.shields.io/github/forks/Moosphan/Material-ProgressView.svg)](https://github.com/Moosphan/Material-ProgressView/network) [![GitHub license](https://img.shields.io/github/license/Moosphan/Material-ProgressView.svg)](https://github.com/Moosphan/Material-ProgressView/blob/master/LICENSE)
 
 
 
@@ -256,7 +253,9 @@ Update the interface of `HorizontalProgressUpdateListener` and `CircleProgressUp
 
 Welcome to improve it with me and give me some issues.
 
-My Blog:<http://moos.club/>
+Blog:<http://moos.club/>
+E-mail:moosphon@gmail.com
+Twitter:[![Twitter](https://img.shields.io/twitter/url/https/github.com/Moosphan/Material-ProgressView.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2FMoosphan%2FMaterial-ProgressView)
 
 Buy  me a coffee:
 
