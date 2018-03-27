@@ -1,6 +1,11 @@
 # Material-ProgressView
 
-[ ![Download](https://api.bintray.com/packages/moosphon/maven/Material-ProgressView/images/download.svg) ](https://bintray.com/moosphon/maven/Material-ProgressView/_latestVersion)
+[ ![Download](https://api.bintray.com/packages/moosphon/maven/Material-ProgressView/images/download.svg) ](https://bintray.com/moosphon/maven/Material-ProgressView/_latestVersion)[![GitHub issues](https://img.shields.io/github/issues/Moosphan/Material-ProgressView.svg)](https://github.com/Moosphan/Material-ProgressView/issues)[![GitHub stars](https://img.shields.io/github/stars/Moosphan/Material-ProgressView.svg)](https://github.com/Moosphan/Material-ProgressView/stargazers)[![GitHub forks](https://img.shields.io/github/forks/Moosphan/Material-ProgressView.svg)](https://github.com/Moosphan/Material-ProgressView/network)[![GitHub license](https://img.shields.io/github/license/Moosphan/Material-ProgressView.svg)](https://github.com/Moosphan/Material-ProgressView/blob/master/LICENSE)[![Twitter](https://img.shields.io/twitter/url/https/github.com/Moosphan/Material-ProgressView.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2FMoosphan%2FMaterial-ProgressView)
+
+
+
+
+
 
 A beautiful and simple used progress view for Android.It provides two different styles to display the progress. You can achieve a gradual change by setting the start color and the end color. You can use it like this：
 
