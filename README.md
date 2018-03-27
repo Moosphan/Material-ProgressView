@@ -254,7 +254,9 @@ Update the interface of `HorizontalProgressUpdateListener` and `CircleProgressUp
 Welcome to improve it with me and give me some issues.
 
 Blog:<http://moos.club/>
+
 E-mail:moosphon@gmail.com
+
 Twitter:[![Twitter](https://img.shields.io/twitter/url/https/github.com/Moosphan/Material-ProgressView.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2FMoosphan%2FMaterial-ProgressView)
 
 Buy  me a coffee:
