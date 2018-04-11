@@ -105,6 +105,10 @@ public class HorizontalProgressView extends View {
      * the offset of text padding bottom
      */
     private int mTextPaddingBottomOffset = 5;
+    /**
+     * moving the text with progress or not
+     */
+    private boolean isTextMoved = true;
 
     /**
      * the animator of progress moving
@@ -131,6 +135,7 @@ public class HorizontalProgressView extends View {
     private Paint mTextPaint;
     private Interpolator mInterpolator;
     private HorizontalProgressUpdateListener animatorUpdateListener;
+
 
 
     public HorizontalProgressView(Context context) {
@@ -171,6 +176,7 @@ public class HorizontalProgressView extends View {
         mProgressDuration = typedArray.getInt(R.styleable.HorizontalProgressView_progressDuration, 1200);
         mCornerRadius = typedArray.getDimensionPixelSize(R.styleable.HorizontalProgressView_corner_radius, getResources().getDimensionPixelSize(R.dimen.default_corner_radius));
         mTextPaddingBottomOffset = typedArray.getDimensionPixelSize(R.styleable.HorizontalProgressView_text_padding_bottom, getResources().getDimensionPixelSize(R.dimen.default_corner_radius));
+        isTextMoved = typedArray.getBoolean(R.styleable.HorizontalProgressView_textMovedEnable, true);
         Log.e(TAG, "progressDuration: "+ mProgressDuration);
 
         typedArray.recycle();
@@ -239,7 +245,19 @@ public class HorizontalProgressView extends View {
             mTextPaint.setTextAlign(Paint.Align.CENTER);
 
             String progressText = ((int) moveProgress)+ "%";
-            canvas.drawText(progressText, (getWidth() - getPaddingLeft())/2 , getHeight()/2-getPaddingTop()-mTextPaddingBottomOffset, mTextPaint);
+            if(isTextMoved){
+                /**
+                 * draw the animated text of progress, should think about the offsets, or text will be covered.
+                 */
+                canvas.drawText(progressText,
+                        (getWidth() - getPaddingLeft() - getPaddingRight() - Utils.dp2px(mContext, 28))*(moveProgress/100) + Utils.dp2px(mContext, 10) ,
+                        getHeight()/2-getPaddingTop()-mTextPaddingBottomOffset, mTextPaint);
+            }else {
+                canvas.drawText(progressText, (getWidth() - getPaddingLeft())/2 , getHeight()/2-getPaddingTop()-mTextPaddingBottomOffset, mTextPaint);
+            }
+
+
+
 
         }
 
@@ -431,6 +449,14 @@ public class HorizontalProgressView extends View {
     }
 
     /**
+     * set progress text moving with progress view or not
+     * @param moved
+     */
+    public void setProgressTextMoved(boolean moved){
+        this.isTextMoved = moved;
+    }
+
+    /**
      * start the progress's moving
      */
     public void startProgressAnimation(){
@@ -518,11 +544,11 @@ public class HorizontalProgressView extends View {
      * update the oval progress track
      */
     private void updateTheTrack() {
-        mRect = new RectF(getPaddingLeft() + mStartProgress*(getWidth() - getPaddingLeft() - getPaddingRight())/100, getHeight()/2 - getPaddingTop(),
-                (getWidth() - getPaddingRight())*((moveProgress )/100),
+        mRect = new RectF(getPaddingLeft() + mStartProgress*(getWidth() - getPaddingLeft() - getPaddingRight() + 60)/100, getHeight()/2 - getPaddingTop(),
+                (getWidth() - getPaddingRight()  - 20)*((moveProgress )/100),
                 getHeight()/2 + getPaddingTop() + mTrackWidth);
         mTrackRect = new RectF(getPaddingLeft(), getHeight()/2 - getPaddingTop(),
-                (getWidth() - getPaddingRight()),
+                (getWidth() - getPaddingRight()-20),
                 getHeight()/2 + getPaddingTop() + mTrackWidth);
     }
 

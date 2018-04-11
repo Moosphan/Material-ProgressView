@@ -30,7 +30,7 @@ More details on CircleProgressView and HorizontalProgressView:
   2. Moudle—>build.gradle:
 
      ```
-     compile 'com.moos:Material-ProgressView:1.0.1'
+     compile 'com.moos:Material-ProgressView:1.0.2'
      ```
 
      ​
@@ -41,7 +41,7 @@ More details on CircleProgressView and HorizontalProgressView:
   <dependency>
     <groupId>com.moos</groupId>
     <artifactId>Material-ProgressView</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <type>pom</type>
   </dependency>
   ```
@@ -111,6 +111,20 @@ More details on CircleProgressView and HorizontalProgressView:
           horizontalProgressView.startProgressAnimation();
 
   ```
+
+  - Or if you want to let the progress value text moved with `HorizontalProgressView` progress animation, you can use it like this:
+  1. in xml:
+  ```
+          app:textMovedEnable="true"
+  ```
+  2. in java:
+  ```
+          horizontalProgressView.setProgressTextMoved(true);
+  ```
+
+  and you will see the effect like this:
+
+  ![example](https://github.com/Moosphan/Material-ProgressView/blob/master/MaterialProgressView-master/image/moved_text.gif)
 
 
 

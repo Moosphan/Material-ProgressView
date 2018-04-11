@@ -56,6 +56,7 @@
         <attr name="animateType"/>
         <attr name="corner_radius" format="dimension"/>
         <attr name="text_padding_bottom" format="dimension"/>
+        <attr name="textMovedEnable" format="boolean"/>
 
     </declare-styleable>
 

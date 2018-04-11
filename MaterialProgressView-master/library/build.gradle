@@ -38,7 +38,7 @@ publish {
     userOrg = 'moosphon'//bintray.com用户名
     groupId = 'com.moos'//jcenter上的路径
     artifactId = 'Material-ProgressView'//项目名称
-    publishVersion = '1.0.1'//版本号
+    publishVersion = '1.0.2'//版本号
     desc = 'This is a pretty and simple used library for progress views on android'
     website = 'https://github.com/Moosphan/Material-ProgressView'//网站
 }

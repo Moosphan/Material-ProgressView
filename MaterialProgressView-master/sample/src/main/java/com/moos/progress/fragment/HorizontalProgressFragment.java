@@ -1,17 +1,20 @@
 package com.moos.progress.fragment;
 
 
+import android.animation.ObjectAnimator;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.AppCompatSeekBar;
 import android.support.v7.widget.SwitchCompat;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
@@ -31,7 +34,7 @@ public class HorizontalProgressFragment extends Fragment implements SeekBar.OnSe
     private SwitchCompat hsc_trackEnabled, hsc_text_visibility;
     private HorizontalProgressView horizontalProgressView;
     private Button btn_start;
-    private TextView textView_call_back;
+    private TextView textView_call_back, bubble_progress;
 
     public HorizontalProgressFragment() {
         // Required empty public constructor
@@ -53,6 +56,7 @@ public class HorizontalProgressFragment extends Fragment implements SeekBar.OnSe
         horizontalProgressView = (HorizontalProgressView) view.findViewById(R.id.progressView_horizontal);
         btn_start = (Button) view.findViewById(R.id.hb_start);
         textView_call_back = (TextView) view.findViewById(R.id.cb_progress_call_back);
+        bubble_progress = (TextView) view.findViewById(R.id.progress_bubble_text);
 
         hsb_track_width.setOnSeekBarChangeListener(this);
         hsb_start_progress.setOnSeekBarChangeListener(this);
@@ -141,10 +145,17 @@ public class HorizontalProgressFragment extends Fragment implements SeekBar.OnSe
     @Override
     public void onHorizontalProgressUpdate(View view,float progress) {
         textView_call_back.setText("progress: "+ (int) (progress)+"%");
+        //startBubbleAnimation(progress);
     }
 
     @Override
     public void onHorizontalProgressFinished(View view) {
+
+    }
+
+    private void startBubbleAnimation(float progress){
+        int distance = horizontalProgressView.getWidth();
+        //ObjectAnimator animator = ObjectAnimator.ofFloat(bubble_progress, "translationX", 0, distance*progress);
 
     }
 }
