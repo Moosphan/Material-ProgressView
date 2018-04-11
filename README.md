@@ -98,7 +98,7 @@ More details on CircleProgressView and HorizontalProgressView:
           circleProgressView.startProgressAnimation();
          
           //HorizontalProgressView
-          HorizontalProgressView circleProgressView = (HorizontalProgressView) view.findViewById(R.id.progressView_horizontal);
+          HorizontalProgressView circleProgressView = (HorizontalProgressView)              view.findViewById(R.id.progressView_horizontal);
           horizontalProgressView.setStartProgress(0);
           horizontalProgressView.setEndProgress(80);
           horizontalProgressView.setStartColor(Color.parseColor("#FF8F5D"));
@@ -112,7 +112,8 @@ More details on CircleProgressView and HorizontalProgressView:
 
   ```
 
-  - Or if you want to let the progress value text moved with `HorizontalProgressView` progress animation, you can use it like this:
+- Or if you want to let the progress value text moved with `HorizontalProgressView` progress animation, you can use it like this:
+
   1. in xml:
   ```
           app:textMovedEnable="true"
