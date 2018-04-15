@@ -264,9 +264,11 @@ More details on CircleProgressView and HorizontalProgressView:
 
 ## Update log
 
-- V1.0.1:
+- V1.0.1:Update the interface of `HorizontalProgressUpdateListener` and `CircleProgressUpdateListener`, add two methods to get back the animation state.
 
-Update the interface of `HorizontalProgressUpdateListener` and `CircleProgressUpdateListener`, add two methods to get back the animation state.
+- V1.0.2:let the progress text can move with the view animation.
+
+- V1.0.3:add the graduated effect for circle progress view.
 
 ## Thanks to
 
