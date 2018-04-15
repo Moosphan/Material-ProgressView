@@ -8,6 +8,9 @@ import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.LinearGradient;
 import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.PathDashPathEffect;
+import android.graphics.PathEffect;
 import android.graphics.RectF;
 import android.graphics.Shader;
 import android.support.annotation.ColorInt;
@@ -132,6 +135,37 @@ public class CircleProgressView extends View {
     private Interpolator mInterpolator;
     private CircleProgressUpdateListener updateListener;
 
+    /**
+     * the path of scale zone
+     */
+    private Path mScaleZonePath;
+    /**
+     * the width of each scale zone
+     */
+    private float mScaleZoneWidth = 6;
+    /**
+     * the length of each scale zone
+     */
+    private float mScaleZoneLength = 22;
+    /**
+     * the padding of scale zones
+     */
+    private int mScaleZonePadding = 18;
+    /**
+     * the shape of scale zone
+     */
+    private RectF mScaleZoneRect;
+    /**
+     * open draw the scale zone or not
+     */
+    private boolean isGraduated = false;
+    /**
+     * the radius of scale zone corner
+     */
+    private int mScaleZoneCornerRadius = 0;
+
+    PathEffect pathEffect;
+
 
     public CircleProgressView(Context context) {
         super(context);
@@ -171,7 +205,11 @@ public class CircleProgressView extends View {
         mTrackColor = typedArray.getColor(R.styleable.CircleProgressView_trackColor, getResources().getColor(R.color.default_track_color));
         textVisibility = typedArray.getBoolean(R.styleable.CircleProgressView_progressTextVisibility, true);
         mProgressDuration = typedArray.getInt(R.styleable.CircleProgressView_progressDuration, 1200);
-
+        mScaleZoneLength = typedArray.getDimensionPixelSize(R.styleable.CircleProgressView_scaleZone_length, getResources().getDimensionPixelSize(R.dimen.default_zone_length));
+        mScaleZoneWidth = typedArray.getDimensionPixelSize(R.styleable.CircleProgressView_scaleZone_width, getResources().getDimensionPixelSize(R.dimen.default_zone_width));
+        mScaleZonePadding = typedArray.getDimensionPixelSize(R.styleable.CircleProgressView_scaleZone_padding, getResources().getDimensionPixelSize(R.dimen.default_zone_padding));
+        mScaleZoneCornerRadius = typedArray.getDimensionPixelSize(R.styleable.CircleProgressView_scaleZone_corner_radius, getResources().getDimensionPixelSize(R.dimen.default_zone_corner_radius));
+        isGraduated = typedArray.getBoolean(R.styleable.CircleProgressView_isGraduated, false);
         moveProgress = mStartProgress;
 
         typedArray.recycle();
@@ -182,6 +220,11 @@ public class CircleProgressView extends View {
         progressPaint.setStyle(Paint.Style.STROKE);
         progressPaint.setStrokeCap(Paint.Cap.ROUND);
         progressPaint.setStrokeWidth(mTrackWidth);
+        mScaleZonePath = new Path();
+        /**
+         * if set the scale zone mode for progress view, should not let the circle be filled
+         */
+        drawScaleZones(isGraduated);
 
     }
 
@@ -191,7 +234,6 @@ public class CircleProgressView extends View {
 
 
         drawTrack(canvas);
-
 
         //mShader = new LinearGradient(mOval.left,mOval.top,mOval.right,mOval.bottom,mStartColor,mEndColor, Shader.TileMode.CLAMP);
         progressPaint.setShader(mShader);
@@ -204,6 +246,7 @@ public class CircleProgressView extends View {
             initProgressDrawing(canvas, false);
 
         }
+
         drawProgressText(canvas);
 
 
@@ -217,6 +260,13 @@ public class CircleProgressView extends View {
 
         mShader = new LinearGradient(mOval.left-200, mOval.top-200, mOval.right+20, mOval.bottom+20,
                 mStartColor, mEndColor, Shader.TileMode.CLAMP);
+        /**
+         * draw the scale zone shape
+         */
+        mScaleZoneRect = new RectF(0,0, mScaleZoneWidth, mScaleZoneLength);
+        mScaleZonePath.addRoundRect(mScaleZoneRect, mScaleZoneCornerRadius, mScaleZoneCornerRadius, Path.Direction.CW);
+
+
     }
 
     /**
@@ -236,6 +286,25 @@ public class CircleProgressView extends View {
 
             }
         }
+    }
+
+    /**
+     * draw the each scale zone, you can set round corner fot it
+     * @link
+     */
+    private void drawScaleZones(boolean isGraduated){
+
+        Log.e(TAG, "init======isGraduated>>>>>"+isGraduated );
+        if(isGraduated){
+            if(pathEffect == null){
+
+                pathEffect = new PathDashPathEffect(mScaleZonePath, mScaleZonePadding,0,PathDashPathEffect.Style.ROTATE);
+            }
+            progressPaint.setPathEffect(pathEffect);
+        }else {
+            progressPaint.setPathEffect(null);
+        }
+
     }
 
     /**
@@ -466,6 +535,48 @@ public class CircleProgressView extends View {
     public void setCircleBroken(boolean isBroken){
         this.circleBroken = isBroken;
         refreshTheView();
+    }
+
+    /**
+     * set the scale zone type for progress view
+     * @param isGraduated have scale zone or not
+     * todo:deal with the multi views can not works situation
+     */
+    public void setGraduatedEnabled(boolean isGraduated){
+        this.isGraduated = isGraduated;
+        drawScaleZones(isGraduated);
+    }
+
+    /**
+     * set the scale zone width for it
+     * @param zoneWidth each zone 's width
+     */
+    public void setScaleZoneWidth(float zoneWidth){
+        this.mScaleZoneWidth = Utils.dp2px(mContext, zoneWidth);
+    }
+
+    /**
+     * set the scale zone length for it
+     * @param zoneLength each zone 's length
+     */
+    public void setScaleZoneLength(float zoneLength){
+        this.mScaleZoneLength = Utils.dp2px(mContext, zoneLength);
+    }
+
+    /**
+     * set each zone's distance
+     * @param zonePadding distance
+     */
+    public void setScaleZonePadding(int zonePadding){
+        this.mScaleZonePadding = Utils.dp2px(mContext, zonePadding);
+    }
+
+    /**
+     * set corner radius for each zone
+     * @param cornerRadius round rect zone's corner
+     */
+    public void setScaleZoneCornerRadius(int cornerRadius){
+        this.mScaleZoneCornerRadius = Utils.dp2px(mContext, cornerRadius);
     }
 
     /**

@@ -31,14 +31,14 @@ dependencies {
     testCompile 'junit:junit:4.12'
 }
 
-apply plugin: 'com.novoda.bintray-release'//添加
+apply plugin: 'com.novoda.bintray-release'
 
-//添加
+
 publish {
-    userOrg = 'moosphon'//bintray.com用户名
-    groupId = 'com.moos'//jcenter上的路径
+    userOrg = 'moosphon'//bintray-username
+    groupId = 'com.moos'//group name
     artifactId = 'Material-ProgressView'//项目名称
-    publishVersion = '1.0.2'//版本号
+    publishVersion = '1.0.3'//version
     desc = 'This is a pretty and simple used library for progress views on android'
-    website = 'https://github.com/Moosphan/Material-ProgressView'//网站
+    website = 'https://github.com/Moosphan/Material-ProgressView'//website
 }

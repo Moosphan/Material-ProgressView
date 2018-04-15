@@ -8,6 +8,9 @@ import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.LinearGradient;
 import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.PathDashPathEffect;
+import android.graphics.PathEffect;
 import android.graphics.RectF;
 import android.graphics.Shader;
 import android.support.annotation.ColorInt;
@@ -22,6 +25,7 @@ import android.view.animation.DecelerateInterpolator;
 import android.view.animation.Interpolator;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.OvershootInterpolator;
+import android.widget.ListView;
 
 /**
  * Created by moos on 2018/3/19.
@@ -131,10 +135,10 @@ public class HorizontalProgressView extends View {
      */
     private RectF mRect;
     private RectF mTrackRect;
-
     private Paint mTextPaint;
     private Interpolator mInterpolator;
     private HorizontalProgressUpdateListener animatorUpdateListener;
+
 
 
 
@@ -187,6 +191,7 @@ public class HorizontalProgressView extends View {
         progressPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         progressPaint.setStyle(Paint.Style.FILL);
 
+
     }
 
     @Override
@@ -206,6 +211,7 @@ public class HorizontalProgressView extends View {
         drawTrack(canvas);
         progressPaint.setShader(mShader);
         canvas.drawRoundRect(mRect, mCornerRadius, mCornerRadius, progressPaint);
+
         drawProgressText(canvas);
 
     }
@@ -216,6 +222,8 @@ public class HorizontalProgressView extends View {
 
         mShader = new LinearGradient(getPaddingLeft()-50, (getHeight()-getPaddingTop())-50, getWidth() - getPaddingRight(), getHeight()/2 + getPaddingTop() + mTrackWidth,
                 mStartColor, mEndColor, Shader.TileMode.CLAMP);
+
+
     }
 
     /**
@@ -262,6 +270,8 @@ public class HorizontalProgressView extends View {
         }
 
     }
+
+
 
     /**
      * set progress animate type

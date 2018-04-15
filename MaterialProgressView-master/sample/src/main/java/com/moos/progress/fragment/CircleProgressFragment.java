@@ -23,7 +23,7 @@ import com.moos.progress.R;
 public class CircleProgressFragment extends Fragment implements SeekBar.OnSeekBarChangeListener, CompoundButton.OnCheckedChangeListener, View.OnClickListener, CircleProgressView.CircleProgressUpdateListener {
 
     private AppCompatSeekBar csb_track_width, csb_start_progress, csb_end_progress, csb_text_size;
-    private SwitchCompat csc_trackEnabled, csc_fillEnabled, csc_circleBroken;
+    private SwitchCompat csc_trackEnabled, csc_fillEnabled, csc_circleBroken, csc_isGraduated;
     private CircleProgressView circleProgressView;
     private Button btn_start;
 
@@ -49,6 +49,7 @@ public class CircleProgressFragment extends Fragment implements SeekBar.OnSeekBa
         csc_trackEnabled = (SwitchCompat) view.findViewById(R.id.csc_isTracked);
         csc_fillEnabled = (SwitchCompat) view.findViewById(R.id.csc_isFilled);
         csc_circleBroken = (SwitchCompat) view.findViewById(R.id.csc_circleBroken);
+        csc_isGraduated = (SwitchCompat) view.findViewById(R.id.csc_isGraduated);
         circleProgressView = (CircleProgressView) view.findViewById(R.id.progressView_circle);
         btn_start = (Button) view.findViewById(R.id.cb_start);
         csb_track_width.setOnSeekBarChangeListener(this);
@@ -58,6 +59,7 @@ public class CircleProgressFragment extends Fragment implements SeekBar.OnSeekBa
         csc_trackEnabled.setOnCheckedChangeListener(this);
         csc_circleBroken.setOnCheckedChangeListener(this);
         csc_fillEnabled.setOnCheckedChangeListener(this);
+        csc_isGraduated.setOnCheckedChangeListener(this);
         btn_start.setOnClickListener(this);
         circleProgressView.setProgressViewUpdateListener(this);
     }
@@ -120,6 +122,14 @@ public class CircleProgressFragment extends Fragment implements SeekBar.OnSeekBa
                     circleProgressView.setFillEnabled(true);
                 }else {
                     circleProgressView.setFillEnabled(false);
+                }
+                break;
+
+            case R.id.csc_isGraduated:
+                if (isChecked){
+                    circleProgressView.setGraduatedEnabled(true);
+                }else {
+                    circleProgressView.setGraduatedEnabled(false);
                 }
                 break;
         }

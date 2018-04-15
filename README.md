@@ -30,7 +30,7 @@ More details on CircleProgressView and HorizontalProgressView:
   2. Moudle—>build.gradle:
 
      ```
-     compile 'com.moos:Material-ProgressView:1.0.2'
+     compile 'com.moos:Material-ProgressView:1.0.3'
      ```
 
      ​
@@ -41,7 +41,7 @@ More details on CircleProgressView and HorizontalProgressView:
   <dependency>
     <groupId>com.moos</groupId>
     <artifactId>Material-ProgressView</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
     <type>pom</type>
   </dependency>
   ```
@@ -152,10 +152,15 @@ More details on CircleProgressView and HorizontalProgressView:
 
 2. Unique attributes for **CircleProgressView**:
 
-   | Attribute    | Description                                   |
-   | ------------ | --------------------------------------------- |
-   | isFilled     | fill the progress inner space or not          |
-   | circleBroken | the circle has loophole or not(circle or arc) |
+   | Attribute               | Description                                   |
+   | ----------------------- | --------------------------------------------- |
+   | isFilled                | fill the progress inner space or not          |
+   | circleBroken            | the circle has loophole or not(circle or arc) |
+   | isGraduated             | Start  the scale zone border mode or not      |
+   | scaleZone_width         | Each scale zone's width                       |
+   | scaleZone_length        | Each scale zone's length                      |
+   | scaleZone_corner_radius | scale zone's rect corner radius               |
+   | scaleZone_padding       | the padding between two scale zones           |
 
 3. Unique attributes for **HorizontalProgressView**:
 
@@ -240,6 +245,11 @@ More details on CircleProgressView and HorizontalProgressView:
   //special for CircleProgressView
   void setCircleBroken(boolean isBroken);
   void setFillEnabled(boolean fillEnabled);
+  void setGraduatedEnabled(boolean isGraduated);
+  void setScaleZoneWidth(float zoneWidth);
+  void setScaleZoneLength(float zoneLength);
+  void setScaleZonePadding(int zonePadding);
+  void setScaleZoneCornerRadius(int cornerRadius);
 
   //special for HorizontalProgressView
   void setProgressCornerRadius(int radius);

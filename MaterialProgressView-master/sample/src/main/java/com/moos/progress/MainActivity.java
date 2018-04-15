@@ -66,6 +66,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         hpv_history.setProgressViewUpdateListener(this);
         hpv_math.setProgressViewUpdateListener(this);
         cpv_small.setProgressViewUpdateListener(this);
+
+        cpv_main.setGraduatedEnabled(true);
         cpv_main.setProgressViewUpdateListener(this);
     }
 
@@ -139,6 +141,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onCircleProgressFinished(View view) {
 
         if(view.getId() == R.id.progressView_circle_small){
+
             cpv_main.startProgressAnimation();
         }
 
