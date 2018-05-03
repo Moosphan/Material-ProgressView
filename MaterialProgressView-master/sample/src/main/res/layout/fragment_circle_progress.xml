@@ -203,12 +203,14 @@
                 android:id="@+id/cb_start"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/blue_start"
-                android:textColor="#ffffff"
+                android:background="@drawable/start_btn_selector"
+                android:textColor="#363636"
                 android:textAllCaps="false"
                 android:layout_gravity="bottom"
-                android:layout_margin="14dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
                 android:padding="15dp"
+                android:layout_marginBottom="16dp"
                 android:text="@string/start_animation_Str"/>
 
 

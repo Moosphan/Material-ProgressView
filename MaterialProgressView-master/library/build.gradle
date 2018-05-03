@@ -38,7 +38,7 @@ publish {
     userOrg = 'moosphon'//bintray-username
     groupId = 'com.moos'//group name
     artifactId = 'Material-ProgressView'//项目名称
-    publishVersion = '1.0.3'//version
+    publishVersion = '1.0.4'//version
     desc = 'This is a pretty and simple used library for progress views on android'
     website = 'https://github.com/Moosphan/Material-ProgressView'//website
 }

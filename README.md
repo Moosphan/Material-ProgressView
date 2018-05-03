@@ -30,7 +30,7 @@ More details on CircleProgressView and HorizontalProgressView:
   2. Moudle—>build.gradle:
 
      ```
-     compile 'com.moos:Material-ProgressView:1.0.3'
+     compile 'com.moos:Material-ProgressView:1.0.4'
      ```
 
      ​
@@ -41,7 +41,7 @@ More details on CircleProgressView and HorizontalProgressView:
   <dependency>
     <groupId>com.moos</groupId>
     <artifactId>Material-ProgressView</artifactId>
-    <version>1.0.3</version>
+    <version>1.0.4</version>
     <type>pom</type>
   </dependency>
   ```
@@ -127,6 +127,20 @@ More details on CircleProgressView and HorizontalProgressView:
 
   ![example](https://github.com/Moosphan/Material-ProgressView/blob/master/MaterialProgressView-master/image/moved_text.gif)
 
+- If you want to set the  progressView's value in dynamic state, like `downloading`or`uploading` files. You can use method `setProgress`:
+```
+......
+
+      //downloading or uploading call back
+      @Override
+      public void onDownloading(float progress) {
+          // you don't need to use `startProgressAnimation` method
+          horizontalProgressView.setProgress(progress);
+      }
+
+......
+
+```
 
 
 ## API
@@ -264,11 +278,13 @@ More details on CircleProgressView and HorizontalProgressView:
 
 ## Update log
 
-- V1.0.1:Update the interface of `HorizontalProgressUpdateListener` and `CircleProgressUpdateListener`, add two methods to get back the animation state.
+- **V1.0.1**: Update the interface of `HorizontalProgressUpdateListener` and `CircleProgressUpdateListener`, add two methods to get back the animation state.
 
-- V1.0.2:let the progress text can move with the view animation.
+- **V1.0.2**: let the progress text can move with the view animation.
 
-- V1.0.3:add the graduated effect for circle progress view.
+- **V1.0.3**: add the graduated effect for circle progress view.
+
+- **V1.0.4**: update the progress view with `downloading` or `uploading`.
 
 ## Thanks to
 

@@ -340,7 +340,7 @@ public class HorizontalProgressView extends View {
      * set move progress
      * @param progress progress of moving
      */
-    private void setProgress(float progress){
+    public void setProgress(float progress){
         this.moveProgress = progress;
         refreshTheView();
     }

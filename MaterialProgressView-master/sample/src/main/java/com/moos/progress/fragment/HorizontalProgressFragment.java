@@ -4,6 +4,7 @@ package com.moos.progress.fragment;
 import android.animation.ObjectAnimator;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.AppCompatSeekBar;
 import android.support.v7.widget.SwitchCompat;
@@ -14,18 +15,24 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.moos.library.CircleProgressView;
 import com.moos.library.HorizontalProgressView;
 import com.moos.progress.R;
+import com.moos.progress.utils.DownloadUtil;
 
 import static android.content.ContentValues.TAG;
 
 /**
  * A sample of HorizontalProgressView.
+ * todo:
+ * 1. add color selector
+ * 2. redesign the UI
  */
 public class HorizontalProgressFragment extends Fragment implements SeekBar.OnSeekBarChangeListener, CompoundButton.OnCheckedChangeListener, View.OnClickListener, HorizontalProgressView.HorizontalProgressUpdateListener {
 
@@ -34,7 +41,10 @@ public class HorizontalProgressFragment extends Fragment implements SeekBar.OnSe
     private SwitchCompat hsc_trackEnabled, hsc_text_visibility;
     private HorizontalProgressView horizontalProgressView;
     private Button btn_start;
+    private ImageView btn_download;
     private TextView textView_call_back, bubble_progress;
+    public static final String VIDEO_URL = "http://oss.timeory.com/map/video/E11EC9F0-229A-4B34-9272-232724EF2BB1.mp4";
+    public static final String SAVED_PATH = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Material-ProgressView/download_test" ;
 
     public HorizontalProgressFragment() {
         // Required empty public constructor
@@ -57,6 +67,7 @@ public class HorizontalProgressFragment extends Fragment implements SeekBar.OnSe
         btn_start = (Button) view.findViewById(R.id.hb_start);
         textView_call_back = (TextView) view.findViewById(R.id.cb_progress_call_back);
         bubble_progress = (TextView) view.findViewById(R.id.progress_bubble_text);
+        btn_download = (ImageView) view.findViewById(R.id.hb_download);
 
         hsb_track_width.setOnSeekBarChangeListener(this);
         hsb_start_progress.setOnSeekBarChangeListener(this);
@@ -66,6 +77,7 @@ public class HorizontalProgressFragment extends Fragment implements SeekBar.OnSe
         hsc_trackEnabled.setOnCheckedChangeListener(this);
         hsc_text_visibility.setOnCheckedChangeListener(this);
         btn_start.setOnClickListener(this);
+        btn_download.setOnClickListener(this);
         horizontalProgressView.setProgressViewUpdateListener(this);
 
         
@@ -134,6 +146,8 @@ public class HorizontalProgressFragment extends Fragment implements SeekBar.OnSe
     public void onClick(View v) {
         if(v.getId() == R.id.hb_start){
             horizontalProgressView.startProgressAnimation();
+        }else if(v.getId() == R.id.hb_download){
+            downloadTheFile();
         }
     }
 
@@ -153,9 +167,25 @@ public class HorizontalProgressFragment extends Fragment implements SeekBar.OnSe
 
     }
 
-    private void startBubbleAnimation(float progress){
-        int distance = horizontalProgressView.getWidth();
-        //ObjectAnimator animator = ObjectAnimator.ofFloat(bubble_progress, "translationX", 0, distance*progress);
 
+    private void downloadTheFile(){
+
+        DownloadUtil.getInstance().download(VIDEO_URL, SAVED_PATH, new DownloadUtil.OnDownloadListener() {
+            @Override
+            public void onDownloadSuccess(String path) {
+
+                Toast.makeText(getContext(), "the file is saved", Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void onDownloading(float progress) {
+                horizontalProgressView.setProgress(progress);
+            }
+
+            @Override
+            public void onDownloadFailed() {
+                Log.e(TAG, "downloadTheFile: >>>>>>failed" );
+            }
+        });
     }
 }

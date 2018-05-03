@@ -1,4 +1,4 @@
-package com.moos.progress;
+package com.moos.progress.activity;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -12,6 +12,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.moos.progress.R;
 import com.moos.progress.fragment.CircleProgressFragment;
 import com.moos.progress.fragment.HorizontalProgressFragment;
 
