@@ -12,7 +12,9 @@ More details on CircleProgressView and HorizontalProgressView:
 
 ![example](https://github.com/Moosphan/Material-ProgressView/blob/master/MaterialProgressView-master/image/progressview.gif)
 
-## Quick start
+## Usage
+>**English**|**[中文](https://github.com/Moosphan/Material-ProgressView/blob/master/MaterialProgressView-master/README-CH.md)**
+### Quick start
 
 - Gradle:
 
@@ -143,7 +145,7 @@ More details on CircleProgressView and HorizontalProgressView:
 ```
 
 
-## API
+### API
 
 - Properties
 
@@ -278,13 +280,13 @@ More details on CircleProgressView and HorizontalProgressView:
 
 ## Update log
 
-- **V1.0.1**: Update the interface of `HorizontalProgressUpdateListener` and `CircleProgressUpdateListener`, add two methods to get back the animation state.
+- **V1.0.1**(2018-03-16): Update the interface of `HorizontalProgressUpdateListener` and `CircleProgressUpdateListener`, add two methods to get back the animation state.
 
-- **V1.0.2**: let the progress text can move with the view animation.
+- **V1.0.2**(2018-03-22): let the progress text can move with the view animation.
 
-- **V1.0.3**: add the graduated effect for circle progress view.
+- **V1.0.3**(2018-04-12): add the graduated effect for circle progress view.
 
-- **V1.0.4**: update the progress view with `downloading` or `uploading`.
+- **V1.0.4**(2018-05-03): update the progress view with `downloading` or `uploading`.
 
 ## Thanks to
 

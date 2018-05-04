@@ -221,10 +221,12 @@ public class CircleProgressView extends View {
         progressPaint.setStrokeCap(Paint.Cap.ROUND);
         progressPaint.setStrokeWidth(mTrackWidth);
         mScaleZonePath = new Path();
+
         /**
          * if set the scale zone mode for progress view, should not let the circle be filled
          */
         drawScaleZones(isGraduated);
+
 
     }
 
@@ -267,6 +269,7 @@ public class CircleProgressView extends View {
         mScaleZonePath.addRoundRect(mScaleZoneRect, mScaleZoneCornerRadius, mScaleZoneCornerRadius, Path.Direction.CW);
 
 
+
     }
 
     /**
@@ -302,6 +305,7 @@ public class CircleProgressView extends View {
             }
             progressPaint.setPathEffect(pathEffect);
         }else {
+            pathEffect = null;
             progressPaint.setPathEffect(null);
         }
 
@@ -542,9 +546,15 @@ public class CircleProgressView extends View {
      * @param isGraduated have scale zone or not
      * todo:deal with the multi views can not works situation
      */
-    public void setGraduatedEnabled(boolean isGraduated){
+    public void setGraduatedEnabled(final boolean isGraduated){
         this.isGraduated = isGraduated;
-        drawScaleZones(isGraduated);
+        post(new Runnable() {
+            @Override
+            public void run() {
+                drawScaleZones(isGraduated);
+            }
+        });
+
     }
 
     /**

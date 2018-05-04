@@ -33,6 +33,7 @@ import static android.content.ContentValues.TAG;
  * todo:
  * 1. add color selector
  * 2. redesign the UI
+ * 3. support more text align ways(like center_vertical)
  */
 public class HorizontalProgressFragment extends Fragment implements SeekBar.OnSeekBarChangeListener, CompoundButton.OnCheckedChangeListener, View.OnClickListener, HorizontalProgressView.HorizontalProgressUpdateListener {
 
