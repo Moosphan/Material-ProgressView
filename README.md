@@ -13,7 +13,7 @@ More details on CircleProgressView and HorizontalProgressView:
 ![example](https://github.com/Moosphan/Material-ProgressView/blob/master/MaterialProgressView-master/image/progressview.gif)
 
 ## Usage
->**English**|**[中文](https://github.com/Moosphan/Material-ProgressView/blob/master/MaterialProgressView-master/README-CH.md)**
+>**English**|**[中文](https://github.com/Moosphan/Material-ProgressView/blob/master/MaterialProgressView-master/README_CH.md)**
 ### Quick start
 
 - Gradle:
