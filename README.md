@@ -32,7 +32,7 @@ More details on CircleProgressView and HorizontalProgressView:
   2. Moudle—>build.gradle:
 
      ```
-     compile 'com.moos:Material-ProgressView:1.0.4'
+     compile 'com.moos:Material-ProgressView:1.0.5'
      ```
 
      ​
@@ -43,7 +43,7 @@ More details on CircleProgressView and HorizontalProgressView:
   <dependency>
     <groupId>com.moos</groupId>
     <artifactId>Material-ProgressView</artifactId>
-    <version>1.0.4</version>
+    <version>1.0.5</version>
     <type>pom</type>
   </dependency>
   ```
@@ -288,6 +288,8 @@ More details on CircleProgressView and HorizontalProgressView:
 
 - **V1.0.4**(2018-05-03): update the progress view with `downloading` or `uploading`.
 
+- **V1.0.5**(2018-05-05): sloved the problem that graduated style of `CircleProgressView` init failed, details in [issue](https://github.com/Moosphan/Material-ProgressView/issues/3).
+
 ## Thanks to
 
 [HenCoder](http://hencoder.com/)
@@ -296,19 +298,19 @@ More details on CircleProgressView and HorizontalProgressView:
 
 ## About me
 
-Welcome to improve it with me and give me some issues.
+>Welcome to improve it with me and give me some issues.
 
-Blog:<http://moos.club/>
+>Blog:<http://moos.club/>
 
-E-mail:moosphon@gmail.com
+>E-mail:moosphon@gmail.com
 
-Twitter:[![Twitter](https://img.shields.io/twitter/url/https/github.com/Moosphan/Material-ProgressView.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2FMoosphan%2FMaterial-ProgressView)
+>Twitter:[![Twitter](https://img.shields.io/twitter/url/https/github.com/Moosphan/Material-ProgressView.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2FMoosphan%2FMaterial-ProgressView)
 
-Buy  me a coffee:
+>Buy  me a coffee:
 
 
 
-![coffee](https://github.com/Moosphan/Material-ProgressView/blob/master/MaterialProgressView-master/image/a_coffee.png)
+>![coffee](https://github.com/Moosphan/Material-ProgressView/blob/master/MaterialProgressView-master/image/a_coffee.png)
 
 
 ## License

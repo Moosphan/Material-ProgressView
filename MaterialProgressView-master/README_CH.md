@@ -24,7 +24,7 @@
   build.gradle:
 
   ```
-  compile 'com.moos:Material-ProgressView:1.0.4'
+  compile 'com.moos:Material-ProgressView:1.0.5'
   ```
 
   ​
@@ -35,7 +35,7 @@
   <dependency>
     <groupId>com.moos</groupId>
     <artifactId>Material-ProgressView</artifactId>
-    <version>1.0.4</version>
+    <version>1.0.5</version>
     <type>pom</type>
   </dependency>
   ```
@@ -268,6 +268,7 @@
 - **V1.0.2**(2018-03-22):为水平进度条提供进度值的跟随动画
 - **V1.0.3**(2018-04-12):增加弧形加载控件的刻度效果
 - **V1.0.4**(2018-05-03):支持动态设置加载控件的进度值(下载/上传进度等)
+- **V1.0.5**(2018-05-05):解决弧形加载控件的刻度模式初始化失效问题，详情见：[issue](https://github.com/Moosphan/Material-ProgressView/issues/3)
 
 ### 特别感谢
 

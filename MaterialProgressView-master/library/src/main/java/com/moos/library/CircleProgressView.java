@@ -544,7 +544,9 @@ public class CircleProgressView extends View {
     /**
      * set the scale zone type for progress view
      * @param isGraduated have scale zone or not
-     * todo:deal with the multi views can not works situation
+     * todo:
+     * 1. deal with the multi views can not works situation
+     * 2. deal the init not work   [solved]
      */
     public void setGraduatedEnabled(final boolean isGraduated){
         this.isGraduated = isGraduated;
