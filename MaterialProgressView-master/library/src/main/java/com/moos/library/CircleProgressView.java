@@ -337,8 +337,10 @@ public class CircleProgressView extends View {
             mTextPaint.setColor(mProgressTextColor);
             mTextPaint.setTextAlign(Paint.Align.CENTER);
 
-            String progressText = ((int) moveProgress)+ "%";
-            canvas.drawText(progressText, (getWidth() - getPaddingLeft())/2 , (getHeight() - getPaddingTop())/2, mTextPaint);
+            String progressText = ((int) moveProgress) + "%";
+            float x = (getWidth() + getPaddingLeft() - getPaddingRight()) / 2;
+            float y = (getHeight() + getPaddingTop() - getPaddingBottom() - (mTextPaint.descent() + mTextPaint.ascent())) / 2;
+            canvas.drawText(progressText, x , y, mTextPaint);
 
         }
 
