@@ -453,6 +453,7 @@ public class CircleProgressView extends View {
      */
     public void setStartColor(@ColorInt int startColor){
         this.mStartColor = startColor;
+        updateTheTrack();
         mShader = new LinearGradient(mOval.left-200, mOval.top-200, mOval.right+20, mOval.bottom+20,
                 mStartColor, mEndColor, Shader.TileMode.CLAMP);
         refreshTheView();
@@ -464,6 +465,7 @@ public class CircleProgressView extends View {
      */
     public void setEndColor(@ColorInt int endColor){
         this.mEndColor = endColor;
+        updateTheTrack();
         mShader = new LinearGradient(mOval.left-200, mOval.top-200, mOval.right+20, mOval.bottom+20,
                 mStartColor, mEndColor, Shader.TileMode.CLAMP);
         refreshTheView();
@@ -667,9 +669,13 @@ public class CircleProgressView extends View {
      * update the oval progress track
      */
     private void updateTheTrack() {
+        if(mOval != null){
+            mOval = null;
+        }
         mOval = new RectF(getPaddingLeft() + mTrackWidth, getPaddingTop() + mTrackWidth,
                 getWidth() - getPaddingRight() - mTrackWidth,
                 getHeight() - getPaddingBottom() - mTrackWidth);
+
     }
 
     /**

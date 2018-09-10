@@ -32,7 +32,7 @@ More details on CircleProgressView and HorizontalProgressView:
   2. Moudle—>build.gradle:
 
      ```
-     compile 'com.moos:Material-ProgressView:1.0.5'
+     compile 'com.moos:Material-ProgressView:1.0.6'
      ```
 
      ​
@@ -43,7 +43,7 @@ More details on CircleProgressView and HorizontalProgressView:
   <dependency>
     <groupId>com.moos</groupId>
     <artifactId>Material-ProgressView</artifactId>
-    <version>1.0.5</version>
+    <version>1.0.6</version>
     <type>pom</type>
   </dependency>
   ```
@@ -281,14 +281,11 @@ More details on CircleProgressView and HorizontalProgressView:
 ## Update log
 
 - **V1.0.1**(2018-03-16): Update the interface of `HorizontalProgressUpdateListener` and `CircleProgressUpdateListener`, add two methods to get back the animation state.
-
 - **V1.0.2**(2018-03-22): let the progress text can move with the view animation.
-
 - **V1.0.3**(2018-04-12): add the graduated effect for circle progress view.
-
 - **V1.0.4**(2018-05-03): update the progress view with `downloading` or `uploading`.
-
 - **V1.0.5**(2018-05-05): sloved the problem that graduated style of `CircleProgressView` init failed, details in [issue](https://github.com/Moosphan/Material-ProgressView/issues/3).
+- **V1.0.6**(2018-09-10): solved the crash problem that  `setStartColor` before calling  `setTrackWidth` .
 
 ## Thanks to
 
@@ -299,8 +296,6 @@ More details on CircleProgressView and HorizontalProgressView:
 ## About me
 
 >Welcome to improve it with me and give me some issues.
-
->Blog:<http://moos.club/>
 
 >E-mail:moosphon@gmail.com
 
@@ -316,7 +311,7 @@ More details on CircleProgressView and HorizontalProgressView:
 ## License
 
 ```
-Copyright 2018 moosphon
+Copyright (c) 2018 moosphon
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.

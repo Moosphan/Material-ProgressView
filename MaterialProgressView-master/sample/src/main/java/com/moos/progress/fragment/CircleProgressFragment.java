@@ -62,6 +62,7 @@ public class CircleProgressFragment extends Fragment implements SeekBar.OnSeekBa
         csc_isGraduated.setOnCheckedChangeListener(this);
         btn_start.setOnClickListener(this);
         circleProgressView.setProgressViewUpdateListener(this);
+        circleProgressView.setStartColor(Color.parseColor("#ee0000"));
         circleProgressView.setGraduatedEnabled(true);
     }
 
