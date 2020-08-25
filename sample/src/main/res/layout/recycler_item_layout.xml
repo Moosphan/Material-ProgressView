@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:gravity="center_vertical"
+    android:background="#ffffffff">
+    <com.moos.library.HorizontalProgressView
+        android:id="@+id/recycler_item_progressView"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_weight="3"
+        app:track_width="12dp"
+        app:textMovedEnable="true"
+        app:progressTextColor="#696969"
+        app:isTracked="true"
+        app:trackColor="#f4f4f4"/>
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        <Button
+            android:id="@+id/recycler_item_start_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|end"
+            android:layout_marginEnd="16dp"
+            android:paddingTop="12dp"
+            android:text="Start"
+            android:textSize="14sp"
+            android:textColor="#686868"
+            android:gravity="center"/>
+    </FrameLayout>
+
+</LinearLayout>
