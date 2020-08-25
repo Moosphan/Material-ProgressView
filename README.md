@@ -6,11 +6,11 @@
 
 A beautiful and simple used progress view for Android.It provides two different styles to display the progress. You can achieve a gradual change by setting the start color and the end color. You can use it like this：
 
-![example](https://github.com/Moosphan/Material-ProgressView/blob/master/MaterialProgressView-master/image/beauty.gif)
+![example](./image/beauty.gif)
 
 More details on CircleProgressView and HorizontalProgressView:
 
-![example](https://github.com/Moosphan/Material-ProgressView/blob/master/MaterialProgressView-master/image/progressview.gif)
+![example](./image/progressview.gif)
 
 ## Usage
 >**English**|**[中文](https://github.com/Moosphan/Material-ProgressView/blob/master/MaterialProgressView-master/README_CH.md)**
@@ -295,23 +295,15 @@ More details on CircleProgressView and HorizontalProgressView:
 
 ## About me
 
->Welcome to improve it with me and give me some issues.
+Welcome to improve it with me and give me some issues.
 
 >E-mail:moosphon@gmail.com
-
->Twitter:[![Twitter](https://img.shields.io/twitter/url/https/github.com/Moosphan/Material-ProgressView.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2FMoosphan%2FMaterial-ProgressView)
-
->Buy  me a coffee:
-
-
-
->![coffee](https://github.com/Moosphan/Material-ProgressView/blob/master/MaterialProgressView-master/image/a_coffee.png)
 
 
 ## License
 
 ```
-Copyright (c) 2018 moosphon
+Copyright (c) 2018 - 2020 Moosphon 
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
