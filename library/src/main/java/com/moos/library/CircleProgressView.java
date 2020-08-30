@@ -31,6 +31,10 @@ import android.view.animation.OvershootInterpolator;
  * Created by moos on 2018/3/16.
  * Material progress view in 'circle' style.
  * Keep improving no longer...
+ * TODO:
+ *  1.Add measure process.
+ *  2.Remove progress text
+ *  3.refactor codes
  */
 public class CircleProgressView extends View {
 
@@ -186,7 +190,7 @@ public class CircleProgressView extends View {
         init();
     }
 
-    private void obtainAttrs(Context context, AttributeSet attrs){
+    private void obtainAttrs(Context context, AttributeSet attrs) {
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.CircleProgressView);
 
         mStartProgress = typedArray.getInt(R.styleable.CircleProgressView_start_progress,0);
@@ -213,7 +217,7 @@ public class CircleProgressView extends View {
         typedArray.recycle();
     }
 
-    private void init(){
+    private void init() {
         progressPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         progressPaint.setStyle(Paint.Style.STROKE);
         progressPaint.setStrokeCap(Paint.Cap.ROUND);
@@ -260,9 +264,6 @@ public class CircleProgressView extends View {
         // draw the scale zone shape style
         mScaleZoneRect = new RectF(0,0, mScaleZoneWidth, mScaleZoneLength);
         mScaleZonePath.addRoundRect(mScaleZoneRect, mScaleZoneCornerRadius, mScaleZoneCornerRadius, Path.Direction.CW);
-
-
-
     }
 
     /**
@@ -307,7 +308,7 @@ public class CircleProgressView extends View {
      * @param canvas mCanvas
      * @param isFilled whether filled or not
      */
-    private void initTrack(Canvas canvas, boolean isFilled){
+    private void initTrack(Canvas canvas, boolean isFilled) {
         if(circleBroken){
             canvas.drawArc(mOval, 135, 270, isFilled, progressPaint);
         }else {
@@ -319,7 +320,7 @@ public class CircleProgressView extends View {
      * draw the progress text
      * @param canvas mCanvas
      */
-    private void drawProgressText(Canvas canvas){
+    private void drawProgressText(Canvas canvas) {
 
         if(textVisibility){
             Paint mTextPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
@@ -341,7 +342,7 @@ public class CircleProgressView extends View {
      * set progress animate type
      * @param type anim type
      */
-    public void setAnimateType(@AnimateType int type){
+    public void setAnimateType(@AnimateType int type) {
         this.mAnimateType = type;
         setObjectAnimatorType(type);
     }
@@ -350,7 +351,7 @@ public class CircleProgressView extends View {
      * set object animation type by received
      * @param animatorType object anim type
      */
-    private void setObjectAnimatorType(int animatorType){
+    private void setObjectAnimatorType(int animatorType) {
         switch (animatorType){
             case ACCELERATE_DECELERATE_INTERPOLATOR:
 
@@ -399,7 +400,7 @@ public class CircleProgressView extends View {
      * set move progress
      * @param progress progress of moving
      */
-    public void setProgress(float progress){
+    public void setProgress(float progress) {
         this.moveProgress = progress;
         refreshTheView();
     }
@@ -412,7 +413,7 @@ public class CircleProgressView extends View {
      * set start progress
      * @param startProgress start progress
      */
-    public void setStartProgress(float startProgress){
+    public void setStartProgress(float startProgress) {
         if(startProgress < 0 || startProgress > 100){
             throw new IllegalArgumentException("Illegal progress value, please check it out!");
         }
@@ -425,7 +426,7 @@ public class CircleProgressView extends View {
      * set end progress
      * @param endProgress end progress
      */
-    public void setEndProgress(float endProgress){
+    public void setEndProgress(float endProgress) {
         if(endProgress < 0 || endProgress > 100){
             throw new IllegalArgumentException("Illegal progress value, please check it out!");
         }
@@ -438,7 +439,7 @@ public class CircleProgressView extends View {
      * set start color
      * @param startColor start point color
      */
-    public void setStartColor(@ColorInt int startColor){
+    public void setStartColor(@ColorInt int startColor) {
         this.mStartColor = startColor;
         updateTheTrack();
         mShader = new LinearGradient(mOval.left-200, mOval.top-200, mOval.right+20, mOval.bottom+20,
@@ -450,7 +451,7 @@ public class CircleProgressView extends View {
      * set end color
      * @param endColor end point color
      */
-    public void setEndColor(@ColorInt int endColor){
+    public void setEndColor(@ColorInt int endColor) {
         this.mEndColor = endColor;
         updateTheTrack();
         mShader = new LinearGradient(mOval.left-200, mOval.top-200, mOval.right+20, mOval.bottom+20,
@@ -462,7 +463,7 @@ public class CircleProgressView extends View {
      * set the width of progress stroke
      * @param width stroke
      */
-    public void setTrackWidth(int width){
+    public void setTrackWidth(int width) {
         this.mTrackWidth = Utils.dp2px(mContext, width);
         progressPaint.setStrokeWidth(width);
         updateTheTrack();
@@ -473,7 +474,7 @@ public class CircleProgressView extends View {
      * set text size for inner text
      * @param size text size
      */
-    public void setProgressTextSize(int size){
+    public void setProgressTextSize(int size) {
         mProgressTextSize = Utils.sp2px(mContext, size);
         refreshTheView();
     }
@@ -482,7 +483,7 @@ public class CircleProgressView extends View {
      * set text color for progress text
      * @param textColor
      */
-    public void setProgressTextColor(@ColorInt int textColor){
+    public void setProgressTextColor(@ColorInt int textColor) {
         this.mProgressTextColor = textColor;
     }
 
@@ -490,7 +491,7 @@ public class CircleProgressView extends View {
      * set duration of progress moving
      * @param duration
      */
-    public void setProgressDuration(int duration){
+    public void setProgressDuration(int duration) {
         this.mProgressDuration = duration;
     }
 
@@ -498,7 +499,7 @@ public class CircleProgressView extends View {
      * set track for progress
      * @param trackAble whether track or not
      */
-    public void setTrackEnabled(boolean trackAble){
+    public void setTrackEnabled(boolean trackAble) {
         this.trackEnabled = trackAble;
         refreshTheView();
     }
@@ -507,7 +508,7 @@ public class CircleProgressView extends View {
      * set track color for progress background
      * @param color bg color
      */
-    public void setTrackColor(@ColorInt int color){
+    public void setTrackColor(@ColorInt int color) {
         this.mTrackColor = color;
         refreshTheView();
     }
@@ -516,7 +517,7 @@ public class CircleProgressView extends View {
      * set content for progress inner space
      * @param fillEnabled whether filled or not
      */
-    public void setFillEnabled(boolean fillEnabled){
+    public void setFillEnabled(boolean fillEnabled) {
         this.fillEnabled = fillEnabled;
         refreshTheView();
     }
@@ -525,7 +526,7 @@ public class CircleProgressView extends View {
      * set the broken circle for progress
      * @param isBroken the circle broken or not
      */
-    public void setCircleBroken(boolean isBroken){
+    public void setCircleBroken(boolean isBroken) {
         this.circleBroken = isBroken;
         refreshTheView();
     }
@@ -537,7 +538,7 @@ public class CircleProgressView extends View {
      * 1. deal with the multi views can not works situation
      * 2. deal the init not work   [solved]
      */
-    public void setGraduatedEnabled(final boolean isGraduated){
+    public void setGraduatedEnabled(final boolean isGraduated) {
         this.isGraduated = isGraduated;
         post(new Runnable() {
             @Override
@@ -552,7 +553,7 @@ public class CircleProgressView extends View {
      * set the scale zone width for it
      * @param zoneWidth each zone 's width
      */
-    public void setScaleZoneWidth(float zoneWidth){
+    public void setScaleZoneWidth(float zoneWidth) {
         this.mScaleZoneWidth = Utils.dp2px(mContext, zoneWidth);
     }
 
@@ -560,7 +561,7 @@ public class CircleProgressView extends View {
      * set the scale zone length for it
      * @param zoneLength each zone 's length
      */
-    public void setScaleZoneLength(float zoneLength){
+    public void setScaleZoneLength(float zoneLength) {
         this.mScaleZoneLength = Utils.dp2px(mContext, zoneLength);
     }
 
@@ -568,7 +569,7 @@ public class CircleProgressView extends View {
      * set each zone's distance
      * @param zonePadding distance
      */
-    public void setScaleZonePadding(int zonePadding){
+    public void setScaleZonePadding(int zonePadding) {
         this.mScaleZonePadding = Utils.dp2px(mContext, zonePadding);
     }
 
@@ -576,7 +577,7 @@ public class CircleProgressView extends View {
      * set corner radius for each zone
      * @param cornerRadius round rect zone's corner
      */
-    public void setScaleZoneCornerRadius(int cornerRadius){
+    public void setScaleZoneCornerRadius(int cornerRadius) {
         this.mScaleZoneCornerRadius = Utils.dp2px(mContext, cornerRadius);
     }
 
@@ -584,14 +585,14 @@ public class CircleProgressView extends View {
      * set the visibility for progress inner text
      * @param visibility text visible or not
      */
-    public void setProgressTextVisibility(boolean visibility){
+    public void setProgressTextVisibility(boolean visibility) {
         this.textVisibility = visibility;
     }
 
     /**
      * start the progress's moving
      */
-    public void startProgressAnimation(){
+    public void startProgressAnimation() {
         progressAnimator = ObjectAnimator.ofFloat(this,"progress",mStartProgress, mEndProgress);
         progressAnimator.setInterpolator(mInterpolator);
         progressAnimator.setDuration(mProgressDuration);
@@ -636,7 +637,7 @@ public class CircleProgressView extends View {
     /**
      * stop the progress moving
      */
-    public void stopProgressAnimation(){
+    public void stopProgressAnimation() {
         if(progressAnimator!=null){
             progressAnimator.cancel();
             progressAnimator = null;
@@ -669,7 +670,7 @@ public class CircleProgressView extends View {
      * @param canvas mCanvas
      * @param isFilled filled or not
      */
-    private void initProgressDrawing(Canvas canvas, boolean isFilled){
+    private void initProgressDrawing(Canvas canvas, boolean isFilled) {
 
         if(circleBroken){
             canvas.drawArc(mOval, 135 + mStartProgress*2.7f, (moveProgress - mStartProgress) * 2.7f, isFilled, progressPaint);
@@ -683,7 +684,7 @@ public class CircleProgressView extends View {
     /**
      * the interface to help get the value of progress moving
      */
-    public interface CircleProgressUpdateListener{
+    public interface CircleProgressUpdateListener {
         void onCircleProgressStart(View view);
         void onCircleProgressUpdate(View view, float progress);
         void onCircleProgressFinished(View view);
@@ -693,7 +694,7 @@ public class CircleProgressView extends View {
      * set the progress update listener for progress view
      * @param listener update listener
      */
-    public void setProgressViewUpdateListener(CircleProgressUpdateListener listener){
+    public void setProgressViewUpdateListener(CircleProgressUpdateListener listener) {
         this.updateListener = listener;
     }
 
