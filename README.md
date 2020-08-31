@@ -117,7 +117,7 @@ We can use these ProgressViews by following codes:
 
 ```
 
-###Something more
+### Something more
 
 Or if you want to let the progress value text moved with `HorizontalProgressView` progress animation, you can use it like this in xml:
 
@@ -277,11 +277,11 @@ What's more, If you want to animate the  progress view's value in dynamic state,
 
 ## Update logs
 
-- **V1.0.1 **(2018-03-16): Update the interface of `HorizontalProgressUpdateListener` and `CircleProgressUpdateListener`, add two methods to get back the animation state.
+- **V1.0.1** (2018-03-16): Update the interface of `HorizontalProgressUpdateListener` and `CircleProgressUpdateListener`, add two methods to get back the animation state.
 - **V1.0.2** (2018-03-22): Add the progress text can move with the view animation.
-- **V1.0.3 **(2018-04-12): Add the graduated effect for circle progress view.
-- **V1.0.4 **(2018-05-03): Update the progress view with `downloading` or `uploading`.
-- **V1.0.5 **(2018-05-05): Fix the problem that graduated style of `CircleProgressView` init failed, details in [#3](https://github.com/Moosphan/Material-ProgressView/issues/3).
+- **V1.0.3** (2018-04-12): Add the graduated effect for circle progress view.
+- **V1.0.4** (2018-05-03): Update the progress view with `downloading` or `uploading`.
+- **V1.0.5** (2018-05-05): Fix the problem that graduated style of `CircleProgressView` init failed, details in [#3](https://github.com/Moosphan/Material-ProgressView/issues/3).
 - **V1.0.6** (2018-09-10): solved the crash problem that  `setStartColor` before calling  `setTrackWidth` .
 
 ## Thanks to
