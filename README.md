@@ -84,7 +84,7 @@ More details on CircleProgressView and HorizontalProgressView:
 
 - In java:
 
-  ```
+  ```Java
 
           //CircleProgressView
           CircleProgressView circleProgressView = (CircleProgressView) view.findViewById(R.id.progressView_circle);
